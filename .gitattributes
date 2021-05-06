@@ -1,0 +1,2 @@
+
+* annex.largefiles=((mimeencoding=binary)and(largerthan=0))
