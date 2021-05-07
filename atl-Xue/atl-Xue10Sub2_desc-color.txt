@@ -1,0 +1,10 @@
+1 Network_1 196 58 250 0
+2 Network_2 255 255 0 0
+3 Network_3 12 48 255 0
+4 Network_4 205 62 78 0
+5 Network_5 42 204 164 0
+6 Network_6 230 148 34 0
+7 Network_7 70 130 180 0
+8 Network_8 0 118 14 0
+9 Network_9 120 18 134 0
+10 Network_10 135 50 74 0
