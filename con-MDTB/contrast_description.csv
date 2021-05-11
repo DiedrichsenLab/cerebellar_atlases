@@ -1,0 +1,51 @@
+ConNo,Contrast,Description
+1,LeftHandMovement,Activity across tasks accounted for by left hand movements
+2,RightHandMovement,Activity across tasks accounted for by right hand movements
+3,Saccades,Activity across tasks accounted for by saccadic eye movements
+4,NoGo,Go-Nogo task with words: No-go
+5,Go,Go-Nogo task with words: go
+6,TheoryOfMind,2 AFC task to indicate if a short story contains true or false belief
+7,ActionObservation,Passive viewing of knots being tied
+8,VideoKnots,Passive viewing of static knots
+9,UnpleasantScenes,IAPS affective pictures: Unpleasant scenes
+10,PleasantScenes,IAPS affective pictures: Pleasant scenes
+11,Math,Simple multiplication equations: Judge true or false
+12,DigitJudgement,Control task for Math: detect 1 within 4 digits
+13,ObjectViewing,Passive viewing of objects or checkerboard patterns
+14,SadFaces,IAPS affective pictures: Sad facial expressions
+15,HappyFaces,IAPS affective pictures: Happy facial expressions
+16,IntervalTiming,Auditory temporal judgement task between short (100ms) and long (175ms) 
+17,MotorImagery,Imagine playing a game of tennis
+18,FingerSimple,Series of six simple key presses of same finger
+19,FingerSequence,Bimanual sequence of six key press
+20,Verbal2Back-,Working memory 2-back task with words: no target 
+21,Verbal2Back+,Working memory 2-back task with words: target 
+22,Object2Back-,Working memory 2-back task with pictures: no target 
+23,Object2Back+,Working memory 2-back task with pictures: target 
+24,SpatialImagery,Imagine to walk from kitchen to bathroom in your childhood home
+25,StroopIncongruent,Stroop task: Incongruent trials
+26,StroopCongruent,Stroop task: Congruent trials
+27,VerbGeneration,Generate a verb for a displayed noun (dog->bark)
+28,WordReading,Read the displayed noun: control for verb generation
+29,VisualSearchSmall,Find a target ('T') amoung distractors ('L'): 4 items
+30,VisualSearchMedium,Find a target ('T') amoung distractors ('L'): 8 items
+31,VisualSearchLarge,Find a target ('T') amoung distractors ('L'): 12 items
+32,Rest,Passive viewing of fixation cross 
+33,CPRO,Concrete Permuted Rules Operations: Apply set of rules to 2 stimuli
+34,PredictionTrue,Predicting the end of a sequentially presented sentence: fulfilled prediction
+35,PredictionViolated,Predicting the end of a sequentially presented sentence: violated prediction
+36,PredictionScrambles,Predicting the end of a sequentially presented sentence: scrambled sentence
+37,SpatialMapEasy,Memorize a spatial map of numbers for subsequent recall: 1 item
+38,SpatialMapMedium,Memorize a spatial map of numbers for subsequent recall: 4 items
+39,SpatialMapHard,Memorize a spatial map of numbers for subsequent recall: 7 items
+40,NatureMovie,"Passive viewing of ""Planet Earth II: Islands"" movie: Animal movements"
+41,AnimatedMovie,"Passive viewing of ""Up"" pixar movie: Social interactions"
+42,LandscapeMovie,Passive viewing of movie: Landscape scenes
+43,MentalRotationEasy,Mental rotation task between two objects: 0 degrees
+44,MentalRotationMedium,Mental rotation task between two objects: 50 degrees
+45,MentalRotationHard,Mental rotation task between two objects: 150 degrees
+46,BiologicalMotion,Point light walker: Judge whether gait is happy or sad
+47,ScrambledMotion,Point light walker: Judge whether scrambled control stimulus moves fast or slow
+48,ResponseAlternativesEasy,Execute fast keypress to imparative signal: 1 cued position
+49,ResponseAlternativesMedium,Execute fast keypress to imparative signal: 2 cued positions
+50,ResponseAlternativesHard,Execute fast keypress to imparative signal: 4 cued position

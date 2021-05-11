@@ -1,10 +1,10 @@
 {
   "Authors": [
-    "Buckner, R.L.",
-    "Krienen, F.",
-    "Castellanos, A.",
-    "Diaz, J C",
-    "Yeo, B T"
+    "King, M.",
+    "Hernandez-Castillo, C.R.", 
+    "Poldrack, R.R.",
+    "Ivry, R.",
+    "Diedrichsen, J."
   ],
   "BIDSVersion": "1.1.0",
   "Curators": [
@@ -14,17 +14,12 @@
   "License": "See LICENSE file",
   "ShortDesc": "Multi-domain task battery (MDTB) parcellation: King et al. (2019)",
   "Maps": ["MDTB10"],
+  "MapDesc": [
+    "MDTB 10 region parcellation"
+  ],
   "ReferencesAndLinks": [
     "King, M., Hernandez-Castillo, C.R., Poldrack, R.R., Ivry, R., and Diedrichsen, J. (2019). Functional Boundaries in the Human Cerebellum revealed by a Multi-Domain Task Battery. Nat. Neurosci."
   ],
   "res": {},
-  "LongDesc": "King et al. (2019) provided an extensive characterization of the functional organization of the cerebellum, by collecting data from 47 task conditions in 24 healthy, young participants. Based on the the task data, a parcellation of the cerebellum in 7, 10, or 17 regions was supplied.",
-  "Files": [
-      "atl-MDTB10_sp-SUIT.nii",
-      "atl-MDTB10_desc-color.txt"
-  ],
-  "FileDescr": [
-    "MDTB 10 region parcellation in SUIT space",
-    "Color and region name information"
-  ]
+  "LongDesc": "King et al. (2019) provided an extensive characterization of the functional organization of the cerebellum, by collecting data from 47 task conditions in 24 healthy, young participants. Based on the the task data, a parcellation of the cerebellum in 7, 10, or 17 regions was supplied."
 }

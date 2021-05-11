@@ -18,21 +18,12 @@
   "License": "See LICENSE file",
   "ShortDesc": "Individual resting state parcellation: Xue et al. (2020)",
   "Maps": ["Xue10Sub1","Xue10Sub2"],
+  "MapDesc": [
+    "Individual parcellation for subject 1",
+    "Individual parcellation for subject 2"],
   "ReferencesAndLinks": [
     "Xue, A., Kong, R., Yang, Q., Eldaief, M. C., Angeli, P. A., Dinicola, L. M., … Yeo, B. T. T. (2021). The detailed organization of the human cerebellum estimated by intrinsic functional connectivity within the individual. https://doi.org/10.1152/jn.00561.2020"
   ],
   "res": {},
-  "LongDesc": "Xue et al. (2020) provided two individual parcellations based on resting state data from 31 sessions for each. 10 Cortical networks were estimated using a hierarchical Bayesian model (Kong et al. 2019) and the cerebellum labeled based on the highest correlation with these networks.",
-  "Files": [
-      "atl-Xue10Sub1_sp-MNI.nii",
-      "atl-Xue10Sub2_sp-MNI.nii",
-      "atl-Xue10Sub1.lut",
-      "atl-Xue10Sub2.lut"
-  ],
-  "FileDescr": [
-    "Individual parcellation for subject 1 in MNI space",
-    "Individual parcellation for subject 2 in MNI space",
-    "Color and Label lookup table",
-    "Color and Label lookup table"
-  ]
+  "LongDesc": "Xue et al. (2020) provided two individual parcellations based on resting state data from 31 sessions for each. 10 Cortical networks were estimated using a hierarchical Bayesian model (Kong et al. 2019) and the cerebellum labeled based on the highest correlation with these networks."
 }

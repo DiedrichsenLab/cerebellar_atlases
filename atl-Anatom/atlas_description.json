@@ -10,7 +10,14 @@
   "Curators": [
     "Diedrichsen J"
   ],
-  "Maps": "Anatom",
+  "Maps": [
+  	"Anatom",
+  	"Anatom_desc-confid"
+  ],
+  "MapDesc": [
+    "Number of most probable compartment, Lobules and Nuclei",
+    "Probability of most probable department"
+  ],
   "Identifier": "Anatom",
   "License": "See LICENSE file",
   "Name": "Probabilistic atlas of cerebellar lobules",
@@ -21,17 +28,5 @@
     "Diedrichsen, J., Maderwald, S., Kuper, M., Thurling, M., Rabe, K., Gizewski, E. R., et al. (2011). Imaging the deep cerebellar nuclei: A probabilistic atlas and normalization procedure. Neuroimage.", 
     "http://www.diedrichsenlab.org/imaging/propatlas.htm"
   ],
-  "res": {},
-  "Files": [
-      "atl-Anatom_sp-SUIT.nii",
-      "atl-Anatom.nii.lut",
-      "atl-Anatom_sp-SUIT_desc-prob.nii",
-      "atl-Anatom_sp-SUIT_desc-maxprob.nii"
-  ],
-  "FileDescr": [
-    "Number of most probable compartment",
-    "Assignment of compartment numbers to lobules",
-    "Full probability maps for each of the compartments",
-    "Probability of the compartment with the highest probability"
-  ]
+  "res": {}
 }

@@ -23,10 +23,10 @@ def make_atlas_list():
                 jsondict["Type"].append("Atlas")
                 jsondict["Atlas"].append(name)
                 jsondict["Maps"].append(file["Maps"])
-        if name.startswith('fun-'):
+        if name.startswith('con-'):
             with open(name +'/contrast_description.json') as jsonfile:
                 file = json.load(jsonfile)
-                jsondict["Type"].append("Functional")
+                jsondict["Type"].append("Contrast")
                 jsondict["Atlas"].append(name)
                 jsondict["Maps"].append(file["Maps"])
     with open('package_description.json','w') as outfile:
@@ -54,10 +54,10 @@ def read_all_atlasdescrip():
         file = json.load(jsonfile)
         for i,name in enumerate(file['Atlas']):
             if file['Type'][i]=='Atlas':
-                with open('atl-' + name +'/atlas_description.json') as jsonfile:
+                with open(name +'/atlas_description.json') as jsonfile:
                     descr.append(json.load(jsonfile))
-            if file['Type'][i]=='Functional':
-                with open('atl-' + name +'/contrast_description.json') as jsonfile:
+            if file['Type'][i]=='Contrast':
+                with open(name +'/contrast_description.json') as jsonfile:
                     descr.append(json.load(jsonfile))
     return descr
 
@@ -67,13 +67,17 @@ def write_readme(descr):
     with open('README.md','w') as out: 
         out.write("# Cerebellar Atlases\n")
         out.write("The cerebellar atlases are a collection of anatomical and functional atlases of the human cerebellum, both of parcellations and continuous maps.")
-        out.write("The atlases are provided as NIFTI-volumes aligned to FNIRT MNI space (FNIRT) or SUIT, as well as gifti-files maps for viewing on the surface-based representation of the cerebellum (Diedrichsen & Zotow, 2015).\n")
+        out.write("For every maps, we provide some the following files\n" + 
+        "* ..._sp-MNI.nii: volume file aligned to FNIRT MNI space\n" +
+        "* ..._sp-SUIT.nii: volume file aligned to SUIT space\n" +
+        "* ..._lut: Color and label lookup table for parcellations\n" + 
+        "* ....gii: Data projected to surface-based representation of the cerebellum (Diedrichsen & Zotow, 2015).\n")
         out.write("The atlases can also be viewed online using out cerebellar atlas tool for quick reference!\n\n")
         for d in descr:
             out.write("### " + d["ShortDesc"] + "\n")
             out.write(d["LongDesc"] + "\n")
-            for i,f in enumerate(d["Files"]):
-                out.write("* " + f + ":    " + d["FileDescr"][i] +"\n")
+            for i,f in enumerate(d["Maps"]):
+                out.write("* " + f + ":    " + d["MapDesc"][i] +"\n")
             out.write("\nReferences and Links:\n")
             for ref in d["ReferencesAndLinks"]: 
                 out.write("* " + ref + "\n")
@@ -116,13 +120,23 @@ def make_MDTB_contrasts():
             nb.save(img, filename)
     pass
 
-
+def make_MDTB_json(): 
+    """
+        Generates the MDTB json file from the csv
+    """
+    D = pd.read_csv('con-MDTB/contrast_description.csv')
+    with open('atl-MDTB/atlas_description.json') as jsonfile:
+        condict = json.load(jsonfile)
+        condict['Maps']=D['Contrast'].tolist()
+        condict['MapDesc']=D['Description'].tolist()
+        with open('con-MDTB/contrast_description_new.json','w') as outfile:
+            json.dump(condict,outfile)
 
 if __name__ == "__main__":
     # make_atlas_list()
-    # descr = read_all_atlasdescrip()
-    # write_readme(descr)
+    descr = read_all_atlasdescrip()
+    write_readme(descr)
     # export_as_FSLatlas('Buckner','Buckner7')
     # rgbtxt_to_lut('atl-Xue10Sub1_desc-color.txt')
-    make_MDTB_contrasts()
+    # make_MDTB_json()
     pass 

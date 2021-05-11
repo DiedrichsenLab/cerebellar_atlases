@@ -12,23 +12,15 @@
   ],
   "Identifier": "Buckner",
   "Maps": ["Buckner7","Buckner17"],
+  "MapDesc": [
+    "Assignment of cerebellar voxels to the 7 network parcellation",
+    "Assignment of cerebellar voxels to the 17 network parcellation"
+  ],
   "License": "See LICENSE file",
   "Name": "Resting state network parcellation",
-  "ShortDesc": "Resting state network partcellation: Buckner et al. (2011)",   "LongDesc": "Buckner et al. (2011) presented the first comprehensive functional atlas of the human cerebellum, based on the correlation of each cerebellar voxel and with the 7 ot 15 cortical resting state networks, described in Yeo et al. Parcellation is based on the data from 1000 subjects. ",
+  "ShortDesc": "Resting state network partcellation: Buckner et al. (2011)",   "LongDesc": "Buckner et al. (2011) presented the first comprehensive functional atlas of the human cerebellum, based on the correlation of each cerebellar voxel and with the 7 or 17 cortical resting state networks, described in Yeo et al. Parcellation is based on the data from 1000 subjects. ",
   "ReferencesAndLinks": [
     "Buckner, R. L., Krienen, F. M., Castellanos, A., Diaz, J. C. & Yeo, B. T. (2011). The organization of the human cerebellum estimated by intrinsic functional connectivity. J Neurophysiol 106, 2322–2345."
   ],
-  "res": {},
-  "Files": [
-      "atl-Buckner7_sp-SUIT.nii",
-      "atl-Buckner7_sp-SUIT_desc-confid.nii",
-      "atl-Buckner17_sp-SUIT.nii",
-      "atl-Buckner17_sp-SUIT_desc-confid.nii"
-  ],
-  "FileDescr": [
-    "Assignment of cerebellar voxels to the 7 network parcellation in SUIT space",
-    "Confidence of the assignment to the 7 networks in SUIT space [0-1]",
-    "Assignment of cerebellar voxels to the 7 network parcellation in SUIT space",
-    "Confidence of the assignment to the 7 networks in SUIT space [0-1]"
-  ]
+  "res": {} 
 }
