@@ -2,6 +2,8 @@ import json
 import os
 import xml.etree.cElementTree as ET
 import pandas as pd
+import nibabel as nb
+import numpy as np
 
 def make_atlas_list():
     """
@@ -88,11 +90,39 @@ def export_as_FSLatlas(name = None, atlas = None):
     tree = ET.ElementTree(root)
     tree.write("filename.xml")
 
+def make_MDTB_contrasts(): 
+    """
+        Generates the MDTB contrasts from the atlas package with correct naming
+    """
+    D = pd.read_csv('../MDTB_maps/contrast_list.csv')
+    for at in ['SUIT']: 
+        for c in range(50):
+            images = D[D.ConNo == c+1]
+            num_img = images.Contrast.shape[0]
+            nii = []
+            dir = os.path.join('..', 'MDTB_maps', at + '_group_contrasts')
+            X = []
+            for i, file in enumerate(images.Filename):
+                nii = nb.load(os.path.join(dir,file + '.nii'))
+                X.append(nii.get_fdata())
+            pass
+            if num_img==2: 
+                Y = (X[0]+X[1])/2
+            else:
+                Y = X[0]
+            img = nb.Nifti1Image(Y, nii.affine)
+            filename = os.path.join('con-MDTB',f'con-MDTB{images.ConNo.iloc[0]:02}{images.Contrast.iloc[0]}_sp-{at}.nii')
+            img.set_data_dtype('int16')
+            nb.save(img, filename)
+    pass
+
+
 
 if __name__ == "__main__":
     # make_atlas_list()
     # descr = read_all_atlasdescrip()
     # write_readme(descr)
     # export_as_FSLatlas('Buckner','Buckner7')
-    rgbtxt_to_lut('atl-Xue10Sub1_desc-color.txt')
+    # rgbtxt_to_lut('atl-Xue10Sub1_desc-color.txt')
+    make_MDTB_contrasts()
     pass 
