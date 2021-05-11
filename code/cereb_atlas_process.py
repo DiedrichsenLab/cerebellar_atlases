@@ -120,6 +120,20 @@ def make_MDTB_contrasts():
             nb.save(img, filename)
     pass
 
+def preprocess_nifti(fname,isLabel):
+    """
+        Preprocesses (cleans) the nifti file by setting data type and intent
+    """
+    nii = nb.load(os.path.join(dir,file + '.nii'))
+    X = nii.get_fdata()
+    img = nb.Nifti1Image(X.round(0), nii.affine)
+    if isLabel: 
+        img.set_data_dtype('int8')
+    else:
+        img.set_data_dtype('int16')
+    print(img.get_shape())
+    nb.save(img, fname)
+
 def make_MDTB_json(): 
     """
         Generates the MDTB json file from the csv
