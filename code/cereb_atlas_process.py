@@ -5,6 +5,7 @@ import pandas as pd
 import nibabel as nb
 import numpy as np
 import SUITPy as suit
+import nilearn.image as nli
 
 def make_atlas_list():
     """
@@ -206,6 +207,13 @@ def make_MDTB_json():
         with open('con-MDTB/contrast_description.json','w') as outfile:
             json.dump(condict,outfile,indent = 4)
 
+def crop_to_MNI(filesource,filenew,interp = 'continuous'):
+    target = nb.load('atl-Buckner/atl-Buckner7_sp-MNI.nii')
+    source = nb.load(filesource)
+    new_img = nli.resample_to_img(source,target,interpolation = interp)
+    nb.save(new_img,filenew)
+    pass
+
 if __name__ == "__main__":
     # preprocess_all()
     # make_atlas_list()
@@ -215,5 +223,9 @@ if __name__ == "__main__":
     # rgbtxt_to_lut('atl-Xue10Sub1_desc-color.txt')
     # make_MDTB_json()
     # all_maps_to_surf()
-    map_to_surf('atl-MDTB/atl-MDTB10',isLabel = True)
+    # map_to_surf('atl-MDTB/atl-MDTB10',isLabel = True)
+    crop_to_MNI('atl-Xue/atl-Xue10Sub1.nii','atl-Xue/atl-Xue10Sub1_sp-MNI.nii',interp='nearest')
+    crop_to_MNI('atl-Xue/atl-Xue10Sub2.nii','atl-Xue/atl-Xue10Sub2_sp-MNI.nii',interp='nearest')
+    preprocess_nifti('atl-Xue/atl-Xue10Sub1_sp-MNI')
+    preprocess_nifti('atl-Xue/atl-Xue10Sub2_sp-MNI')
     pass
