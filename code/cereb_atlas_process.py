@@ -107,7 +107,7 @@ def make_MDTB_contrasts():
         Generates the MDTB contrasts from the atlas package with correct naming
     """
     D = pd.read_csv('../MDTB_maps/contrast_list.csv')
-    for at in ['SUIT']:
+    for at in ['MNI']:
         for c in range(50):
             images = D[D.ConNo == c+1]
             num_img = images.Contrast.shape[0]
@@ -173,7 +173,9 @@ def map_to_surf(fname,isLabel=True):
         L = suit.flatmap.make_label_gifti(labeldata,
             label_names=labels,column_names=['label'],label_RGBA=RGBA)
     else:
-        pass
+        gii_name = fname + '.func.gii'
+        condata = suit.flatmap.vol_to_surf([nii_name],stats = 'mode')
+        L = suit.flatmap.make_func_gifti(condata)
     nb.save(L,gii_name)
 
 def all_maps_to_surf():
@@ -183,11 +185,13 @@ def all_maps_to_surf():
             if file['Type'][i]=='Atlas':
                 map = file['Maps'][i]
                 for m in map:
+                    print(f"mapping {m}\n")
                     map_to_surf(os.path.join(name,'atl-' + m),True)
             if file['Type'][i]=='Contrast':
                 map = file['Maps'][i]
                 for m in map:
-                    map_to_surf(os.path.join(name,'atl-' + m),False)
+                    print(f"mapping {m}\n")
+                    map_to_surf(os.path.join(name,'con-' + m),False)
     pass
 
 
@@ -223,9 +227,10 @@ if __name__ == "__main__":
     # rgbtxt_to_lut('atl-Xue10Sub1_desc-color.txt')
     # make_MDTB_json()
     # all_maps_to_surf()
+    make_MDTB_contrasts()
     # map_to_surf('atl-MDTB/atl-MDTB10',isLabel = True)
-    crop_to_MNI('atl-Xue/atl-Xue10Sub1.nii','atl-Xue/atl-Xue10Sub1_sp-MNI.nii',interp='nearest')
-    crop_to_MNI('atl-Xue/atl-Xue10Sub2.nii','atl-Xue/atl-Xue10Sub2_sp-MNI.nii',interp='nearest')
-    preprocess_nifti('atl-Xue/atl-Xue10Sub1_sp-MNI')
-    preprocess_nifti('atl-Xue/atl-Xue10Sub2_sp-MNI')
+    # crop_to_MNI('atl-Xue/atl-Xue10Sub1.nii','atl-Xue/atl-Xue10Sub1_sp-MNI.nii',interp='nearest')
+    # crop_to_MNI('atl-Xue/atl-Xue10Sub2.nii','atl-Xue/atl-Xue10Sub2_sp-MNI.nii',interp='nearest')
+    # preprocess_nifti('atl-Xue/atl-Xue10Sub1_sp-MNI')
+    # preprocess_nifti('atl-Xue/atl-Xue10Sub2_sp-MNI')
     pass
