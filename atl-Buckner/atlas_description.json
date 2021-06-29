@@ -11,7 +11,11 @@
     "Diedrichsen J"
   ],
   "Identifier": "Buckner",
-  "Maps": ["Buckner7","Buckner17"],
+  "Maps": ["atl-Buckner7","atl-Buckner17"],
+  "Type": [
+  	"dseg",
+  	"dseg"
+  ],
   "MapDesc": [
     "Assignment of cerebellar voxels to the 7 network parcellation",
     "Assignment of cerebellar voxels to the 17 network parcellation"

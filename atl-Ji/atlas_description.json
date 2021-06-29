@@ -15,7 +15,10 @@
   "License": "See LICENSE file",
   "Name": "Ji",
   "Maps": [
-        "Ji10"
+        "atl-Ji10"
+  ],
+  "Type": [
+        "desg"
   ],
   "MapDesc": [
     "Subcortical resting state parcellation in 10 networks"

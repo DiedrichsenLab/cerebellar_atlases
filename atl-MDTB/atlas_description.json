@@ -13,7 +13,10 @@
   "Identifier": "MDTB",
   "License": "See LICENSE file",
   "ShortDesc": "Multi-domain task battery (MDTB) parcellation: King et al. (2019)",
-  "Maps": ["MDTB10"],
+  "Maps": ["atl-MDTB10"],
+  "Type": [
+    "dseg"
+  ],
   "MapDesc": [
     "MDTB 10 region parcellation"
   ],

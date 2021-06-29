@@ -17,7 +17,11 @@
   "Identifier": "Xue",
   "License": "See LICENSE file",
   "ShortDesc": "Individual resting state parcellation: Xue et al. (2020)",
-  "Maps": ["Xue10Sub1","Xue10Sub2"],
+  "Maps": ["atl-Xue10Sub1","atl-Xue10Sub2"],
+  "Type": [
+    "dseg",
+    "dseg"
+  ],
   "MapDesc": [
     "Individual parcellation for subject 1",
     "Individual parcellation for subject 2"],

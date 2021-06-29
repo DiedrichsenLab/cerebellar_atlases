@@ -11,8 +11,12 @@
     "Diedrichsen J"
   ],
   "Maps": [
-  	"Anatom",
-  	"Anatom_desc-confid"
+  	"atl-Anatom",
+  	"atl-Anatom_desc-confid"
+  ],
+  "Type": [
+  	"dseg",
+  	"confid"
   ],
   "MapDesc": [
     "Number of most probable compartment, Lobules and Nuclei",

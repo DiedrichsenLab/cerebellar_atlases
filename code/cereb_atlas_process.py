@@ -14,29 +14,19 @@ def make_atlas_list():
     jsondict = {}
     jsondict['Atlas'] = []
     jsondict['ShortDesc'] = []
-    jsondict['Type'] = []
     jsondict['Maps'] = []
     jsondict['MapDesc'] = []
     jsondict['Type'] = []
 
     directories =  ['atl-Anatom','atl-Buckner','atl-Xue','atl-Ji','atl-MDTB','con-MDTB']
     for name in directories:
-        if name.startswith('atl-'):
-            with open(name +'/atlas_description.json') as jsonfile:
-                file = json.load(jsonfile)
-                jsondict["Type"].append("Atlas")
-                jsondict["Atlas"].append(name)
-                jsondict["ShortDesc"].append(file["ShortDesc"])
-                jsondict["Maps"].append(file["Maps"])
-                jsondict["MapDesc"].append(file["MapDesc"])
-        if name.startswith('con-'):
-            with open(name +'/contrast_description.json') as jsonfile:
-                file = json.load(jsonfile)
-                jsondict["Type"].append("Contrast")
-                jsondict["Atlas"].append(name)
-                jsondict["ShortDesc"].append(file["ShortDesc"])
-                jsondict["Maps"].append(file["Maps"])
-                jsondict["MapDesc"].append(file["MapDesc"])
+        with open(name +'/atlas_description.json') as jsonfile:
+            file = json.load(jsonfile)
+            jsondict["Atlas"].append(name)
+            jsondict["ShortDesc"].append(file["ShortDesc"])
+            jsondict["Maps"].append(file["Maps"])
+            jsondict["Type"].append(file["Type"])
+            jsondict["MapDesc"].append(file["MapDesc"])
     with open('package_description.json','w') as outfile:
         json.dump(jsondict,outfile,indent = 5)
 
@@ -76,9 +66,9 @@ def write_readme(descr):
         out.write("# Cerebellar Atlases\n")
         out.write("The cerebellar atlases are a collection of anatomical and functional atlases of the human cerebellum, both of parcellations and continuous maps.")
         out.write("For every maps, we provide some the following files\n" +
-        "* ..._sp-MNI.nii: volume file aligned to FNIRT MNI space\n" +
-        "* ..._sp-SUIT.nii: volume file aligned to SUIT space\n" +
-        "* ..._lut: Color and label lookup table for parcellations\n" +
+        "* ..._space-MNI.nii: volume file aligned to FNIRT MNI space\n" +
+        "* ..._space-SUIT.nii: volume file aligned to SUIT space\n" +
+        "* ....tsv: Color and label lookup table for parcellations\n" +
         "* ....gii: Data projected to surface-based representation of the cerebellum (Diedrichsen & Zotow, 2015).\n")
         out.write("The atlases can also be viewed online using out cerebellar atlas tool for quick reference!\n\n")
         for d in descr:
@@ -123,7 +113,7 @@ def make_MDTB_contrasts():
             else:
                 Y = X[0]
             img = nb.Nifti1Image(Y, nii.affine)
-            filename = os.path.join('con-MDTB',f'con-MDTB{images.ConNo.iloc[0]:02}{images.Contrast.iloc[0]}_sp-{at}.nii')
+            filename = os.path.join('con-MDTB',f'con-MDTB{images.ConNo.iloc[0]:02}{images.Contrast.iloc[0]}_space-{at}.nii')
             img.set_data_dtype('int16')
             nb.save(img, filename)
     pass
@@ -145,22 +135,22 @@ def preprocess_nifti(fname,isLabel=True):
     nb.save(img, fname + '.nii')
 
 def preprocess_all():
-    preprocess_nifti('atl-Buckner/atl-Buckner7_sp-MNI')
-    preprocess_nifti('atl-Buckner/atl-Buckner7_sp-SUIT')
-    preprocess_nifti('atl-Buckner/atl-Buckner17_sp-MNI')
-    preprocess_nifti('atl-Buckner/atl-Buckner17_sp-SUIT')
-    preprocess_nifti('atl-Ji/atl-Ji10_sp-MNI')
-    preprocess_nifti('atl-Ji/atl-Ji10_sp-SUIT')
-    preprocess_nifti('atl-Anatom/atl-Anatom_sp-MNI')
-    preprocess_nifti('atl-Anatom/atl-Anatom_sp-SUIT')
-    preprocess_nifti('atl-MDTB/atl-MDTB10_sp-MNI')
-    preprocess_nifti('atl-MDTB/atl-MDTB10_sp-SUIT')
+    preprocess_nifti('atl-Buckner/atl-Buckner7_space-MNI')
+    preprocess_nifti('atl-Buckner/atl-Buckner7_space-SUIT')
+    preprocess_nifti('atl-Buckner/atl-Buckner17_space-MNI')
+    preprocess_nifti('atl-Buckner/atl-Buckner17_space-SUIT')
+    preprocess_nifti('atl-Ji/atl-Ji10_space-MNI')
+    preprocess_nifti('atl-Ji/atl-Ji10_space-SUIT')
+    preprocess_nifti('atl-Anatom/atl-Anatom_space-MNI')
+    preprocess_nifti('atl-Anatom/atl-Anatom_space-SUIT')
+    preprocess_nifti('atl-MDTB/atl-MDTB10_space-MNI')
+    preprocess_nifti('atl-MDTB/atl-MDTB10_space-SUIT')
 
 def map_to_surf(fname,isLabel=True):
     """
         Maps a specific label file to the SUIT flatmap
     """
-    nii_name = fname + '_sp-SUIT.nii'
+    nii_name = fname + '_space-SUIT.nii'
     if isLabel:
         gii_name = fname + '.label.gii'
         labeldata = suit.flatmap.vol_to_surf([nii_name],stats = 'mode')
@@ -199,7 +189,7 @@ def make_MDTB_json():
     """
         Generates the MDTB json file from the csv
     """
-    D = pd.read_csv('con-MDTB/contrast_description.csv')
+    D = pd.read_csv('con-MDTB/atlas_description.csv')
     with open('atl-MDTB/atlas_description.json') as jsonfile:
         condict = json.load(jsonfile)
         condict['ShortDesc'] = "Multi-domain task battery (MDTB) contrast maps: King et al. (2019)"
@@ -208,11 +198,11 @@ def make_MDTB_json():
         condict['Maps'] = []
         for i,d in D.iterrows():
             condict['Maps'].append(f'MDTB{d.ConNo:02}{d.Contrast}')
-        with open('con-MDTB/contrast_description.json','w') as outfile:
+        with open('con-MDTB/atlas_description.json','w') as outfile:
             json.dump(condict,outfile,indent = 4)
 
 def crop_to_MNI(filesource,filenew,interp = 'continuous'):
-    target = nb.load('atl-Buckner/atl-Buckner7_sp-MNI.nii')
+    target = nb.load('atl-Buckner/atl-Buckner7_space-MNI.nii')
     source = nb.load(filesource)
     new_img = nli.resample_to_img(source,target,interpolation = interp)
     nb.save(new_img,filenew)
@@ -220,17 +210,17 @@ def crop_to_MNI(filesource,filenew,interp = 'continuous'):
 
 if __name__ == "__main__":
     # preprocess_all()
-    # make_atlas_list()
+    make_atlas_list()
     # descr = read_all_atlasdescrip()
     # write_readme(descr)
     # export_as_FSLatlas('Buckner','Buckner7')
     # rgbtxt_to_lut('atl-Xue10Sub1_desc-color.txt')
     # make_MDTB_json()
     # all_maps_to_surf()
-    make_MDTB_contrasts()
+    # make_MDTB_contrasts()
     # map_to_surf('atl-MDTB/atl-MDTB10',isLabel = True)
-    # crop_to_MNI('atl-Xue/atl-Xue10Sub1.nii','atl-Xue/atl-Xue10Sub1_sp-MNI.nii',interp='nearest')
-    # crop_to_MNI('atl-Xue/atl-Xue10Sub2.nii','atl-Xue/atl-Xue10Sub2_sp-MNI.nii',interp='nearest')
-    # preprocess_nifti('atl-Xue/atl-Xue10Sub1_sp-MNI')
-    # preprocess_nifti('atl-Xue/atl-Xue10Sub2_sp-MNI')
+    # crop_to_MNI('atl-Xue/atl-Xue10Sub1.nii','atl-Xue/atl-Xue10Sub1_space-MNI.nii',interp='nearest')
+    # crop_to_MNI('atl-Xue/atl-Xue10Sub2.nii','atl-Xue/atl-Xue10Sub2_space-MNI.nii',interp='nearest')
+    # preprocess_nifti('atl-Xue/atl-Xue10Sub1_space-MNI')
+    # preprocess_nifti('atl-Xue/atl-Xue10Sub2_space-MNI')
     pass
