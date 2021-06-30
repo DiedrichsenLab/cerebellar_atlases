@@ -161,10 +161,10 @@ def map_to_surf(fname,isLabel=True):
     """
         Maps a specific label file to the SUIT flatmap
     """
-    nii_name = fname + '_space-SUIT.nii'
+    nii_name = fname + '_space-SUIT'
     if isLabel:
-        gii_name = fname + '.label.gii'
-        labeldata = suit.flatmap.vol_to_surf([nii_name],stats = 'mode')
+        gii_name = fname + '_dseg.label.gii'
+        labeldata = suit.flatmap.vol_to_surf([nii_name + '_dseg.nii'],stats = 'mode')
         lut_name = fname + '.lut'
         D=pd.read_csv(lut_name,header=None,delimiter=' ')
         RGBA = np.c_[D[1],D[2],D[3],np.ones((D.shape[0],))]
@@ -175,24 +175,21 @@ def map_to_surf(fname,isLabel=True):
             label_names=labels,column_names=['label'],label_RGBA=RGBA)
     else:
         gii_name = fname + '.func.gii'
-        condata = suit.flatmap.vol_to_surf([nii_name],stats = 'mode')
+        condata = suit.flatmap.vol_to_surf([nii_name + '.nii'],stats = 'nanmean')
         L = suit.flatmap.make_func_gifti(condata)
     nb.save(L,gii_name)
 
 def all_maps_to_surf():
     with open('package_description.json') as jsonfile:
         file = json.load(jsonfile)
-        for i,name in enumerate(file['Atlas']):
-            if file['Type'][i]=='Atlas':
-                map = file['Maps'][i]
-                for m in map:
-                    print(f"mapping {m}\n")
-                    map_to_surf(os.path.join(name,'atl-' + m),True)
-            if file['Type'][i]=='Contrast':
-                map = file['Maps'][i]
-                for m in map:
-                    print(f"mapping {m}\n")
-                    map_to_surf(os.path.join(name,'con-' + m),False)
+        for i,atlname in enumerate(file['Atlas']):
+            typ = file['Type'][i]
+            for x,map in enumerate(file['Maps'][i]):
+                    print(f"mapping {map}\n")
+                    if typ[x]=='dseg':
+                        map_to_surf(os.path.join(atlname,map),True)
+                    elif typ[x]=='func':
+                        map_to_surf(os.path.join(atlname,map),False)
     pass
 
 
@@ -227,15 +224,15 @@ if __name__ == "__main__":
     # export_as_FSLatlas('Buckner','Buckner7')
     # rgbtxt_to_lut('atl-Xue10Sub1_desc-color.txt')
     # make_MDTB_json()
-    lut_to_tsv('atl-Buckner/atl-Buckner7')
-    lut_to_tsv('atl-Buckner/atl-Buckner17')
-    lut_to_tsv('atl-Xue/atl-Xue10Sub2')
-    lut_to_tsv('atl-Xue/atl-Xue10Sub1')
-    lut_to_tsv('atl-Anatom/atl-Anatom')
-    lut_to_tsv('atl-MDTB/atl-MDTB10')
-    lut_to_tsv('atl-Ji/atl-Ji10')
+    # lut_to_tsv('atl-Buckner/atl-Buckner7')
+    # lut_to_tsv('atl-Buckner/atl-Buckner17')
+    # lut_to_tsv('atl-Xue/atl-Xue10Sub2')
+    # lut_to_tsv('atl-Xue/atl-Xue10Sub1')
+    # lut_to_tsv('atl-Anatom/atl-Anatom')
+    # lut_to_tsv('atl-MDTB/atl-MDTB10')
+    # lut_to_tsv('atl-Ji/atl-Ji10')
 
-    # all_maps_to_surf()
+    all_maps_to_surf()
     # make_MDTB_contrasts()
     # map_to_surf('atl-MDTB/atl-MDTB10',isLabel = True)
     # crop_to_MNI('atl-Xue/atl-Xue10Sub1.nii','atl-Xue/atl-Xue10Sub1_space-MNI.nii',interp='nearest')
