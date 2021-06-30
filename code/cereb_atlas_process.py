@@ -40,6 +40,17 @@ def rgbtxt_to_lut(filename):
             "Name":D[1]})
     L.to_csv(filename+'.lut',header=None,sep=' ')
 
+def lut_to_tsv(filename):
+    D=pd.read_csv(filename + '.lut',header=None,delimiter=' ')
+    hexcolor = []
+    for i in range(D.shape[0]):
+        hexcolor.append(f"#{int(D.iloc[i,1]*255):02x}{int(D.iloc[i,2]*255):02x}{int(D.iloc[i,3]*255):02x}")
+    L=pd.DataFrame({
+            "index":D[0],
+            "name":D[4],
+            "color":hexcolor})
+    L.to_csv(filename+'.tsv',index = False, sep='\t')
+
 def read_all_atlasdescrip():
     """
         Reads all atlas descriptors for later parsing into website or README
@@ -210,12 +221,20 @@ def crop_to_MNI(filesource,filenew,interp = 'continuous'):
 
 if __name__ == "__main__":
     # preprocess_all()
-    make_atlas_list()
+    # make_atlas_list()
     # descr = read_all_atlasdescrip()
     # write_readme(descr)
     # export_as_FSLatlas('Buckner','Buckner7')
     # rgbtxt_to_lut('atl-Xue10Sub1_desc-color.txt')
     # make_MDTB_json()
+    lut_to_tsv('atl-Buckner/atl-Buckner7')
+    lut_to_tsv('atl-Buckner/atl-Buckner17')
+    lut_to_tsv('atl-Xue/atl-Xue10Sub2')
+    lut_to_tsv('atl-Xue/atl-Xue10Sub1')
+    lut_to_tsv('atl-Anatom/atl-Anatom')
+    lut_to_tsv('atl-MDTB/atl-MDTB10')
+    lut_to_tsv('atl-Ji/atl-Ji10')
+
     # all_maps_to_surf()
     # make_MDTB_contrasts()
     # map_to_surf('atl-MDTB/atl-MDTB10',isLabel = True)
