@@ -1,11 +1,10 @@
 {
      "Atlas": [
-          "atl-Anatom",
-          "atl-Buckner",
-          "atl-Xue",
-          "atl-Ji",
-          "atl-MDTB",
-          "con-MDTB"
+          "Anatom",
+          "Buckner_2011",
+          "Xue_2021",
+          "Ji_2019",
+          "MDTB_2019",
      ],
      "ShortDesc": [
           "Probabilistic atlas for cerebellar lobules and nuclei: Diedrichsen (2009)",
@@ -13,7 +12,6 @@
           "Individual resting state parcellation: Xue et al. (2020)",
           "Subcortical restingstate parcellation: Ji et al. (2019)",
           "Multi-domain task battery (MDTB) parcellation: King et al. (2019)",
-          "Multi-domain task battery (MDTB) contrast maps: King et al. (2019)"
      ],
      "Maps": [
           [
@@ -30,9 +28,6 @@
           ],
           [
                "atl-Ji10"
-          ],
-          [
-               "atl-MDTB10"
           ],
           [
                "con-MDTB01LeftHandMovement",
@@ -84,7 +79,8 @@
                "con-MDTB47ScrambledMotion",
                "con-MDTB48ResponseAlternativesEasy",
                "con-MDTB49ResponseAlternativesMedium",
-               "con-MDTB50ResponseAlternativesHard"
+               "con-MDTB50ResponseAlternativesHard",
+               "atl-MDTB10"
           ]
      ],
      "MapDesc": [
@@ -102,9 +98,6 @@
           ],
           [
                "Subcortical resting state parcellation in 10 networks"
-          ],
-          [
-               "MDTB 10 region parcellation"
           ],
           [
                "Activity across tasks accounted for by left hand movements",
@@ -156,7 +149,8 @@
                "Point light walker: Judge whether scrambled control stimulus moves fast or slow",
                "Execute fast keypress to imparative signal: 1 cued position",
                "Execute fast keypress to imparative signal: 2 cued positions",
-               "Execute fast keypress to imparative signal: 4 cued position"
+               "Execute fast keypress to imparative signal: 4 cued position",
+               "MDTB 10 region parcellation"
           ]
      ],
      "Type": [
@@ -176,59 +170,57 @@
                "desg"
           ],
           [
+               "func",
+               "func",
+               "func",
+               "func",
+               "func",
+               "func",
+               "func",
+               "func",
+               "func",
+               "func",
+               "func",
+               "func",
+               "func",
+               "func",
+               "func",
+               "func",
+               "func",
+               "func",
+               "func",
+               "func",
+               "func",
+               "func",
+               "func",
+               "func",
+               "func",
+               "func",
+               "func",
+               "func",
+               "func",
+               "func",
+               "func",
+               "func",
+               "func",
+               "func",
+               "func",
+               "func",
+               "func",
+               "func",
+               "func",
+               "func",
+               "func",
+               "func",
+               "func",
+               "func",
+               "func",
+               "func",
+               "func",
+               "func",
+               "func",
+               "func",
                "dseg"
-          ],
-          [
-               "func",
-               "func",
-               "func",
-               "func",
-               "func",
-               "func",
-               "func",
-               "func",
-               "func",
-               "func",
-               "func",
-               "func",
-               "func",
-               "func",
-               "func",
-               "func",
-               "func",
-               "func",
-               "func",
-               "func",
-               "func",
-               "func",
-               "func",
-               "func",
-               "func",
-               "func",
-               "func",
-               "func",
-               "func",
-               "func",
-               "func",
-               "func",
-               "func",
-               "func",
-               "func",
-               "func",
-               "func",
-               "func",
-               "func",
-               "func",
-               "func",
-               "func",
-               "func",
-               "func",
-               "func",
-               "func",
-               "func",
-               "func",
-               "func",
-               "func"
           ]
      ]
 }

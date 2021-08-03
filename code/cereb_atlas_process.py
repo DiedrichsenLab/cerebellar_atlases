@@ -18,7 +18,7 @@ def make_atlas_list():
     jsondict['MapDesc'] = []
     jsondict['Type'] = []
 
-    directories =  ['atl-Anatom','atl-Buckner','atl-Xue','atl-Ji','atl-MDTB','con-MDTB']
+    directories =  ['Anatom','Buckner_2011','Xue_2021','Ji_2019','MDTB_2019']
     for name in directories:
         with open(name +'/atlas_description.json') as jsonfile:
             file = json.load(jsonfile)
@@ -124,7 +124,7 @@ def make_MDTB_contrasts():
             else:
                 Y = X[0]
             img = nb.Nifti1Image(Y, nii.affine)
-            filename = os.path.join('con-MDTB',f'con-MDTB{images.ConNo.iloc[0]:02}{images.Contrast.iloc[0]}_space-{at}.nii')
+            filename = os.path.join('MDTB_2019',f'con-MDTB{images.ConNo.iloc[0]:02}{images.Contrast.iloc[0]}_space-{at}.nii')
             img.set_data_dtype('int16')
             nb.save(img, filename)
     pass
@@ -146,16 +146,16 @@ def preprocess_nifti(fname,isLabel=True):
     nb.save(img, fname + '.nii')
 
 def preprocess_all():
-    preprocess_nifti('atl-Buckner/atl-Buckner7_space-MNI')
-    preprocess_nifti('atl-Buckner/atl-Buckner7_space-SUIT')
-    preprocess_nifti('atl-Buckner/atl-Buckner17_space-MNI')
-    preprocess_nifti('atl-Buckner/atl-Buckner17_space-SUIT')
-    preprocess_nifti('atl-Ji/atl-Ji10_space-MNI')
-    preprocess_nifti('atl-Ji/atl-Ji10_space-SUIT')
-    preprocess_nifti('atl-Anatom/atl-Anatom_space-MNI')
-    preprocess_nifti('atl-Anatom/atl-Anatom_space-SUIT')
-    preprocess_nifti('atl-MDTB/atl-MDTB10_space-MNI')
-    preprocess_nifti('atl-MDTB/atl-MDTB10_space-SUIT')
+    preprocess_nifti('Buckner_2011/atl-Buckner7_space-MNI')
+    preprocess_nifti('Buckner_2011/atl-Buckner7_space-SUIT')
+    preprocess_nifti('Buckner_2011/atl-Buckner17_space-MNI')
+    preprocess_nifti('Buckner_2011/atl-Buckner17_space-SUIT')
+    preprocess_nifti('Ji_2019/atl-Ji10_space-MNI')
+    preprocess_nifti('Ji_2019/atl-Ji10_space-SUIT')
+    preprocess_nifti('Anatom/atl-Anatom_space-MNI')
+    preprocess_nifti('Anatom/atl-Anatom_space-SUIT')
+    preprocess_nifti('MDTB_2019/atl-MDTB10_space-MNI')
+    preprocess_nifti('MDTB_2019/atl-MDTB10_space-SUIT')
 
 def map_to_surf(fname,isLabel=True):
     """
@@ -197,8 +197,8 @@ def make_MDTB_json():
     """
         Generates the MDTB json file from the csv
     """
-    D = pd.read_csv('con-MDTB/atlas_description.csv')
-    with open('atl-MDTB/atlas_description.json') as jsonfile:
+    D = pd.read_csv('MDTB_2019/atlas_description.csv')
+    with open('MDTB_2019/atlas_description.json') as jsonfile:
         condict = json.load(jsonfile)
         condict['ShortDesc'] = "Multi-domain task battery (MDTB) contrast maps: King et al. (2019)"
         condict['LongDesc'] = "King et al. (2019) provided an extensive characterization of the functional organization of the cerebellum of 24 healthy, young participants. The contast are for for 47 task conditions, accounted for the activity caused by left hand, right hand, and eye movements. All maps are relative to the mean activitiy across all tasks."
@@ -206,11 +206,11 @@ def make_MDTB_json():
         condict['Maps'] = []
         for i,d in D.iterrows():
             condict['Maps'].append(f'MDTB{d.ConNo:02}{d.Contrast}')
-        with open('con-MDTB/atlas_description.json','w') as outfile:
+        with open('MDTB_2019/atlas_description.json','w') as outfile:
             json.dump(condict,outfile,indent = 4)
 
 def crop_to_MNI(filesource,filenew,interp = 'continuous'):
-    target = nb.load('atl-Buckner/atl-Buckner7_space-MNI.nii')
+    target = nb.load('Buckner_2011/atl-Buckner7_space-MNI.nii')
     source = nb.load(filesource)
     new_img = nli.resample_to_img(source,target,interpolation = interp)
     nb.save(new_img,filenew)
@@ -224,19 +224,19 @@ if __name__ == "__main__":
     # export_as_FSLatlas('Buckner','Buckner7')
     # rgbtxt_to_lut('atl-Xue10Sub1_desc-color.txt')
     # make_MDTB_json()
-    # lut_to_tsv('atl-Buckner/atl-Buckner7')
-    # lut_to_tsv('atl-Buckner/atl-Buckner17')
-    # lut_to_tsv('atl-Xue/atl-Xue10Sub2')
-    # lut_to_tsv('atl-Xue/atl-Xue10Sub1')
-    # lut_to_tsv('atl-Anatom/atl-Anatom')
-    # lut_to_tsv('atl-MDTB/atl-MDTB10')
-    # lut_to_tsv('atl-Ji/atl-Ji10')
+    # lut_to_tsv('Buckner_2011/atl-Buckner7')
+    # lut_to_tsv('Buckner_2011/atl-Buckner17')
+    # lut_to_tsv('Xue_2021/atl-Xue10Sub2')
+    # lut_to_tsv('Xue_2021/atl-Xue10Sub1')
+    # lut_to_tsv('Anatom/atl-Anatom')
+    # lut_to_tsv('MDTB_2019/atl-MDTB10')
+    # lut_to_tsv('Ji_2010/atl-Ji10')
 
     all_maps_to_surf()
     # make_MDTB_contrasts()
-    # map_to_surf('atl-MDTB/atl-MDTB10',isLabel = True)
-    # crop_to_MNI('atl-Xue/atl-Xue10Sub1.nii','atl-Xue/atl-Xue10Sub1_space-MNI.nii',interp='nearest')
-    # crop_to_MNI('atl-Xue/atl-Xue10Sub2.nii','atl-Xue/atl-Xue10Sub2_space-MNI.nii',interp='nearest')
-    # preprocess_nifti('atl-Xue/atl-Xue10Sub1_space-MNI')
-    # preprocess_nifti('atl-Xue/atl-Xue10Sub2_space-MNI')
+    # map_to_surf('MDTB_2019/atl-MDTB10',isLabel = True)
+    # crop_to_MNI('Xue_2021/atl-Xue10Sub1.nii','atl-Xue/atl-Xue10Sub1_space-MNI.nii',interp='nearest')
+    # crop_to_MNI('Xue_2021/atl-Xue10Sub2.nii','atl-Xue/atl-Xue10Sub2_space-MNI.nii',interp='nearest')
+    # preprocess_nifti('Xue_2021/atl-Xue10Sub1_space-MNI')
+    # preprocess_nifti('Xue_2021/atl-Xue10Sub2_space-MNI')
     pass
