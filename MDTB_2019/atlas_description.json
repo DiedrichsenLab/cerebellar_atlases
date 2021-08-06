@@ -64,7 +64,8 @@
         "con-MDTB48ResponseAlternativesEasy",
         "con-MDTB49ResponseAlternativesMedium",
         "con-MDTB50ResponseAlternativesHard",
-        "atl-MDTB10"
+        "atl-MDTB10",
+        "atl-MDTB10-subregions"
     ],
     "Type": [
         "func", "func", "func", "func", "func", "func", "func", "func", "func", "func",
@@ -72,7 +73,7 @@
         "func", "func", "func", "func", "func", "func", "func", "func", "func", "func",
         "func", "func", "func", "func", "func", "func", "func", "func", "func", "func",
         "func", "func", "func", "func", "func", "func", "func", "func", "func", "func",
-        "dseg"
+        "dseg", "dseg"
     ],
     "MapDesc": [
         "Activity across tasks accounted for by left hand movements",
@@ -125,7 +126,8 @@
         "Execute fast keypress to imparative signal: 1 cued position",
         "Execute fast keypress to imparative signal: 2 cued positions",
         "Execute fast keypress to imparative signal: 4 cued position",
-        "MDTB 10 region parcellation"
+        "MDTB 10 region parcellation",
+        "MDTB 10 subregions parcellation"
     ],
     "ReferencesAndLinks": [
         "King, M., Hernandez-Castillo, C.R., Poldrack, R.R., Ivry, R., and Diedrichsen, J. (2019). Functional Boundaries in the Human Cerebellum revealed by a Multi-Domain Task Battery. Nat. Neurosci."
