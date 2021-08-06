@@ -12,8 +12,10 @@
     ],
     "Identifier": "MDTB",
     "License": "See LICENSE file",
-    "ShortDesc": "Multi-domain task battery (MDTB) contrast maps: King et al. (2019)",
+    "ShortDesc": "Multi-domain task battery (MDTB) parcellation and contrasts: King et al. (2019)",
     "Maps": [
+        "atl-MDTB10",
+        "atl-MDTB10-subregions",
         "con-MDTB01LeftHandMovement",
         "con-MDTB02RightHandMovement",
         "con-MDTB03Saccades",
@@ -64,18 +66,16 @@
         "con-MDTB48ResponseAlternativesEasy",
         "con-MDTB49ResponseAlternativesMedium",
         "con-MDTB50ResponseAlternativesHard",
-        "atl-MDTB10",
-        "atl-MDTB10-subregions"
     ],
-    "Type": [
+    "Type": ["dseg", "dseg",
         "func", "func", "func", "func", "func", "func", "func", "func", "func", "func",
         "func", "func", "func", "func", "func", "func", "func", "func", "func", "func",
         "func", "func", "func", "func", "func", "func", "func", "func", "func", "func",
         "func", "func", "func", "func", "func", "func", "func", "func", "func", "func",
-        "func", "func", "func", "func", "func", "func", "func", "func", "func", "func",
-        "dseg", "dseg"
     ],
     "MapDesc": [
+        "MDTB 10 region parcellation",
+        "MDTB 10 subregions parcellation",
         "Activity across tasks accounted for by left hand movements",
         "Activity across tasks accounted for by right hand movements",
         "Activity across tasks accounted for by saccadic eye movements",
@@ -126,12 +126,10 @@
         "Execute fast keypress to imparative signal: 1 cued position",
         "Execute fast keypress to imparative signal: 2 cued positions",
         "Execute fast keypress to imparative signal: 4 cued position",
-        "MDTB 10 region parcellation",
-        "MDTB 10 subregions parcellation"
     ],
     "ReferencesAndLinks": [
         "King, M., Hernandez-Castillo, C.R., Poldrack, R.R., Ivry, R., and Diedrichsen, J. (2019). Functional Boundaries in the Human Cerebellum revealed by a Multi-Domain Task Battery. Nat. Neurosci."
     ],
     "res": {},
-    "LongDesc": "King et al. (2019) provided an extensive characterization of the functional organization of the cerebellum of 24 healthy, young participants. The contast are for for 47 task conditions, accounted for the activity caused by left hand, right hand, and eye movements. All maps are relative to the mean activitiy across all tasks."
+    "LongDesc": "King et al. (2019) provided an extensive characterization of the functional organization of the cerebellum of 24 healthy, young participants. The contast are for for 47 task conditions, accounted for the activity caused by left hand, right hand, and eye movements. All contrast maps are relative to the mean activitiy across all tasks. The parcellation into 10 regions is defined from the task-evoked activity across all tasks."
 }
