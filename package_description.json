@@ -1,17 +1,17 @@
 {
      "Atlas": [
-          "Anatom",
+          "Diedrichsen_2009",
           "Buckner_2011",
           "Xue_2021",
           "Ji_2019",
-          "MDTB_2019",
+          "King_2019"
      ],
      "ShortDesc": [
           "Probabilistic atlas for cerebellar lobules and nuclei: Diedrichsen (2009)",
           "Resting state network partcellation: Buckner et al. (2011)",
           "Individual resting state parcellation: Xue et al. (2020)",
           "Subcortical restingstate parcellation: Ji et al. (2019)",
-          "Multi-domain task battery (MDTB) parcellation: King et al. (2019)",
+          "Multi-domain task battery (MDTB) parcellation and contrasts: King et al. (2019)"
      ],
      "Maps": [
           [
@@ -30,6 +30,7 @@
                "atl-Ji10"
           ],
           [
+               "atl-MDTB10",
                "con-MDTB01LeftHandMovement",
                "con-MDTB02RightHandMovement",
                "con-MDTB03Saccades",
@@ -79,8 +80,7 @@
                "con-MDTB47ScrambledMotion",
                "con-MDTB48ResponseAlternativesEasy",
                "con-MDTB49ResponseAlternativesMedium",
-               "con-MDTB50ResponseAlternativesHard",
-               "atl-MDTB10"
+               "con-MDTB50ResponseAlternativesHard"
           ]
      ],
      "MapDesc": [
@@ -100,6 +100,7 @@
                "Subcortical resting state parcellation in 10 networks"
           ],
           [
+               "MDTB 10 region parcellation",
                "Activity across tasks accounted for by left hand movements",
                "Activity across tasks accounted for by right hand movements",
                "Activity across tasks accounted for by saccadic eye movements",
@@ -149,8 +150,7 @@
                "Point light walker: Judge whether scrambled control stimulus moves fast or slow",
                "Execute fast keypress to imparative signal: 1 cued position",
                "Execute fast keypress to imparative signal: 2 cued positions",
-               "Execute fast keypress to imparative signal: 4 cued position",
-               "MDTB 10 region parcellation"
+               "Execute fast keypress to imparative signal: 4 cued position"
           ]
      ],
      "Type": [
@@ -167,9 +167,10 @@
                "dseg"
           ],
           [
-               "desg"
+               "dseg"
           ],
           [
+               "dseg",
                "func",
                "func",
                "func",
@@ -219,8 +220,33 @@
                "func",
                "func",
                "func",
-               "func",
-               "dseg"
+               "func"
+          ]
+     ],
+     "LongDesc": [
+          "The anatomical definitions are based on the fMRI atlas of an individual cerebellum by Schmahmann et al. (2000). We manually identified the main lobules on MRI scans of 20 healthy young participants (ROIs 1-28). Using a different set of 23 participants, we also identified the deep cerebellar nuclei (ROIs 29-34).",
+          "Buckner et al. (2011) presented the first comprehensive functional atlas of the human cerebellum, based on the correlation of each cerebellar voxel and with the 7 or 17 cortical resting state networks, described in Yeo et al. Parcellation is based on the data from 1000 subjects. ",
+          "Xue et al. (2020) provided two individual parcellations based on resting state data from 31 sessions for each. 10 Cortical networks were estimated using a hierarchical Bayesian model (Kong et al. 2019) and the cerebellum labeled based on the highest correlation with these networks.",
+          "Ji et al. (2019) presented a parcellation of subcortical structures based on correlation with 10 cortical networks, based on the HCP resting state data.",
+          "King et al. (2019) provided an extensive characterization of the functional organization of the cerebellum of 24 healthy, young participants. The contast are for for 47 task conditions, accounted for the activity caused by left hand, right hand, and eye movements. All contrast maps are relative to the mean activitiy across all tasks. The parcellation into 10 regions is defined from the task-evoked activity across all tasks."
+     ],
+     "ReferencesAndLinks": [
+          [
+               "Diedrichsen, J., Balsters, J. H., Flavell, J., Cussans, E., & Ramnani, N. (2009). A probabilistic atlas of the human cerebellum. Neuroimage.",
+               "Diedrichsen, J., Maderwald, S., Kuper, M., Thurling, M., Rabe, K., Gizewski, E. R., et al. (2011). Imaging the deep cerebellar nuclei: A probabilistic atlas and normalization procedure. Neuroimage.",
+               "http://www.diedrichsenlab.org/imaging/propatlas.htm"
+          ],
+          [
+               "Buckner, R. L., Krienen, F. M., Castellanos, A., Diaz, J. C. & Yeo, B. T. (2011). The organization of the human cerebellum estimated by intrinsic functional connectivity. J Neurophysiol 106, 2322\u20132345."
+          ],
+          [
+               "Xue, A., Kong, R., Yang, Q., Eldaief, M. C., Angeli, P. A., Dinicola, L. M., \u2026 Yeo, B. T. T. (2021). The detailed organization of the human cerebellum estimated by intrinsic functional connectivity within the individual. https://doi.org/10.1152/jn.00561.2020"
+          ],
+          [
+               "Buckner, R. L., Krienen, F. M., Castellanos, A., Diaz, J. C. & Yeo, B. T. (2011). The organization of the human cerebellum estimated by intrinsic functional connectivity. J Neurophysiol 106, 2322\u20132345."
+          ],
+          [
+               "King, M., Hernandez-Castillo, C.R., Poldrack, R.R., Ivry, R., and Diedrichsen, J. (2019). Functional Boundaries in the Human Cerebellum revealed by a Multi-Domain Task Battery. Nat. Neurosci."
           ]
      ]
 }

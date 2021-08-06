@@ -17,8 +17,10 @@ def make_atlas_list():
     jsondict['Maps'] = []
     jsondict['MapDesc'] = []
     jsondict['Type'] = []
+    jsondict["LongDesc"]=[]
+    jsondict["ReferencesAndLinks"]=[]
 
-    directories =  ['Anatom','Buckner_2011','Xue_2021','Ji_2019','MDTB_2019']
+    directories =  ['Diedrichsen_2009','Buckner_2011','Xue_2021','Ji_2019','King_2019']
     for name in directories:
         with open(name +'/atlas_description.json') as jsonfile:
             file = json.load(jsonfile)
@@ -27,6 +29,8 @@ def make_atlas_list():
             jsondict["Maps"].append(file["Maps"])
             jsondict["Type"].append(file["Type"])
             jsondict["MapDesc"].append(file["MapDesc"])
+            jsondict["LongDesc"].append(file["LongDesc"])
+            jsondict["ReferencesAndLinks"].append(file["ReferencesAndLinks"])
     with open('package_description.json','w') as outfile:
         json.dump(jsondict,outfile,indent = 5)
 
@@ -51,26 +55,6 @@ def lut_to_tsv(filename):
             "color":hexcolor})
     L.to_csv(filename+'.tsv',index = False, sep='\t')
 
-def read_all_atlasdescrip():
-    """
-        Reads all atlas descriptors for later parsing into website or README
-        INPUT:
-        OUTPUT:
-
-    """
-    descr = []
-    with open('package_description.json') as jsonfile:
-        file = json.load(jsonfile)
-        for i,name in enumerate(file['Atlas']):
-            if file['Type'][i]=='Atlas':
-                with open(name +'/atlas_description.json') as jsonfile:
-                    descr.append(json.load(jsonfile))
-            if file['Type'][i]=='Contrast':
-                with open(name +'/contrast_description.json') as jsonfile:
-                    descr.append(json.load(jsonfile))
-    return descr
-
-
 
 def write_readme(descr):
     with open('README.md','w') as out:
@@ -82,15 +66,17 @@ def write_readme(descr):
         "* ....tsv: Color and label lookup table for parcellations\n" +
         "* ....gii: Data projected to surface-based representation of the cerebellum (Diedrichsen & Zotow, 2015).\n")
         out.write("The atlases can also be viewed online using out cerebellar atlas tool for quick reference!\n\n")
-        for d in descr:
-            out.write("### " + d["ShortDesc"] + "\n")
-            out.write(d["LongDesc"] + "\n")
-            for i,f in enumerate(d["Maps"]):
-                out.write("* " + f + ":    " + d["MapDesc"][i] +"\n")
-            out.write("\nReferences and Links:\n")
-            for ref in d["ReferencesAndLinks"]:
-                out.write("* " + ref + "\n")
-            out.write("\n\n")
+        with open('package_description.json') as jsonfile:
+            file = json.load(jsonfile)
+            for i,name in enumerate(file['Atlas']):
+                out.write("### " + file["ShortDesc"][i] + "\n")
+                out.write(file["LongDesc"][i] + "\n")
+                for i,f in enumerate(file["Maps"][i]):
+                    out.write("* " + f + ":    " + d["MapDesc"][i] +"\n")
+                out.write("\nReferences and Links:\n")
+                for ref in file["ReferencesAndLinks"][i]:
+                    out.write("* " + ref + "\n")
+                out.write("\n\n")
         out.write("## Reference and Licence\n")
         out.write("The atlas collection was curated by the Jörn Diedrichsen and his lab. ")
 
@@ -218,9 +204,8 @@ def crop_to_MNI(filesource,filenew,interp = 'continuous'):
 
 if __name__ == "__main__":
     # preprocess_all()
-    # make_atlas_list()
-    # descr = read_all_atlasdescrip()
-    # write_readme(descr)
+    make_atlas_list()
+    write_readme()
     # export_as_FSLatlas('Buckner','Buckner7')
     # rgbtxt_to_lut('atl-Xue10Sub1_desc-color.txt')
     # make_MDTB_json()
@@ -232,7 +217,7 @@ if __name__ == "__main__":
     # lut_to_tsv('MDTB_2019/atl-MDTB10')
     # lut_to_tsv('Ji_2010/atl-Ji10')
 
-    all_maps_to_surf()
+    # all_maps_to_surf()
     # make_MDTB_contrasts()
     # map_to_surf('MDTB_2019/atl-MDTB10',isLabel = True)
     # crop_to_MNI('Xue_2021/atl-Xue10Sub1.nii','atl-Xue/atl-Xue10Sub1_space-MNI.nii',interp='nearest')
