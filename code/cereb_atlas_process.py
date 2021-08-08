@@ -159,6 +159,7 @@ def map_to_surf(fname,isLabel=True):
         labels = labels + D[4].tolist()
         L = suit.flatmap.make_label_gifti(labeldata,
             label_names=labels,column_names=['label'],label_RGBA=RGBA)
+        L.darrays[0].datatype=2
     else:
         gii_name = fname + '.func.gii'
         condata = suit.flatmap.vol_to_surf([nii_name + '.nii'],stats = 'nanmean')
@@ -175,7 +176,8 @@ def all_maps_to_surf():
                     if typ[x]=='dseg':
                         map_to_surf(os.path.join(atlname,map),True)
                     elif typ[x]=='func':
-                        map_to_surf(os.path.join(atlname,map),False)
+                        pass
+                        # map_to_surf(os.path.join(atlname,map),False)
     pass
 
 
@@ -217,7 +219,7 @@ if __name__ == "__main__":
     # lut_to_tsv('MDTB_2019/atl-MDTB10')
     # lut_to_tsv('Ji_2010/atl-Ji10')
 
-    # all_maps_to_surf()
+    all_maps_to_surf()
     # make_MDTB_contrasts()
     # map_to_surf('MDTB_2019/atl-MDTB10',isLabel = True)
     # crop_to_MNI('Xue_2021/atl-Xue10Sub1.nii','atl-Xue/atl-Xue10Sub1_space-MNI.nii',interp='nearest')
