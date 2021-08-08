@@ -31,6 +31,7 @@
           ],
           [
                "atl-MDTB10",
+               "atl-MDTB10-subregions",
                "con-MDTB01LeftHandMovement",
                "con-MDTB02RightHandMovement",
                "con-MDTB03Saccades",
@@ -100,7 +101,8 @@
                "Subcortical resting state parcellation in 10 networks"
           ],
           [
-               "MDTB 10 region parcellation",
+               "MDTB parcellation into 10 regions",
+               "MDTB parcellation into spatially contiguous subregions",
                "Activity across tasks accounted for by left hand movements",
                "Activity across tasks accounted for by right hand movements",
                "Activity across tasks accounted for by saccadic eye movements",
@@ -171,16 +173,7 @@
           ],
           [
                "dseg",
-               "func",
-               "func",
-               "func",
-               "func",
-               "func",
-               "func",
-               "func",
-               "func",
-               "func",
-               "func",
+               "dseg",
                "func",
                "func",
                "func",

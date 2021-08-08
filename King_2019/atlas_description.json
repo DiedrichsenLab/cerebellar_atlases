@@ -65,17 +65,17 @@
         "con-MDTB47ScrambledMotion",
         "con-MDTB48ResponseAlternativesEasy",
         "con-MDTB49ResponseAlternativesMedium",
-        "con-MDTB50ResponseAlternativesHard",
+        "con-MDTB50ResponseAlternativesHard"
     ],
     "Type": ["dseg", "dseg",
         "func", "func", "func", "func", "func", "func", "func", "func", "func", "func",
         "func", "func", "func", "func", "func", "func", "func", "func", "func", "func",
         "func", "func", "func", "func", "func", "func", "func", "func", "func", "func",
-        "func", "func", "func", "func", "func", "func", "func", "func", "func", "func",
+        "func", "func", "func", "func", "func", "func", "func", "func", "func", "func"
     ],
     "MapDesc": [
-        "MDTB 10 region parcellation",
-        "MDTB 10 subregions parcellation",
+        "MDTB parcellation into 10 regions",
+        "MDTB parcellation into spatially contiguous subregions",
         "Activity across tasks accounted for by left hand movements",
         "Activity across tasks accounted for by right hand movements",
         "Activity across tasks accounted for by saccadic eye movements",
@@ -125,7 +125,7 @@
         "Point light walker: Judge whether scrambled control stimulus moves fast or slow",
         "Execute fast keypress to imparative signal: 1 cued position",
         "Execute fast keypress to imparative signal: 2 cued positions",
-        "Execute fast keypress to imparative signal: 4 cued position",
+        "Execute fast keypress to imparative signal: 4 cued position"
     ],
     "ReferencesAndLinks": [
         "King, M., Hernandez-Castillo, C.R., Poldrack, R.R., Ivry, R., and Diedrichsen, J. (2019). Functional Boundaries in the Human Cerebellum revealed by a Multi-Domain Task Battery. Nat. Neurosci."

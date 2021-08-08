@@ -56,7 +56,7 @@ def lut_to_tsv(filename):
     L.to_csv(filename+'.tsv',index = False, sep='\t')
 
 
-def write_readme(descr):
+def write_readme():
     with open('README.md','w') as out:
         out.write("# Cerebellar Atlases\n")
         out.write("The cerebellar atlases are a collection of anatomical and functional atlases of the human cerebellum, both of parcellations and continuous maps.")
@@ -71,8 +71,8 @@ def write_readme(descr):
             for i,name in enumerate(file['Atlas']):
                 out.write("### " + file["ShortDesc"][i] + "\n")
                 out.write(file["LongDesc"][i] + "\n")
-                for i,f in enumerate(file["Maps"][i]):
-                    out.write("* " + f + ":    " + d["MapDesc"][i] +"\n")
+                for j,f in enumerate(file["Maps"][i]):
+                    out.write("* " + f + ":    " + file["MapDesc"][i][j] +"\n")
                 out.write("\nReferences and Links:\n")
                 for ref in file["ReferencesAndLinks"][i]:
                     out.write("* " + ref + "\n")
