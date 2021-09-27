@@ -40,7 +40,7 @@ Ji et al. (2019) presented a parcellation of subcortical structures based on cor
 * atl-Ji10:    Subcortical resting state parcellation in 10 networks
 
 References and Links:
-* Buckner, R. L., Krienen, F. M., Castellanos, A., Diaz, J. C. & Yeo, B. T. (2011). The organization of the human cerebellum estimated by intrinsic functional connectivity. J Neurophysiol 106, 2322–2345.
+* Ji, J. L., Spronk, M., Kulkarni, K., Repovš, G., Anticevic, A., & Cole, M. W. (2019). Mapping the human brain's cortical-subcortical functional network organization. Neuroimage, 185, 35-57
 
 
 ### Multi-domain task battery (MDTB) parcellation and contrasts: King et al. (2019)
