@@ -15,7 +15,6 @@
     "ShortDesc": "Multi-domain task battery (MDTB) parcellation and contrasts: King et al. (2019)",
     "Maps": [
         "atl-MDTB10",
-        "atl-MDTB10-subregions",
         "con-MDTB01LeftHandMovement",
         "con-MDTB02RightHandMovement",
         "con-MDTB03Saccades",
@@ -67,7 +66,7 @@
         "con-MDTB49ResponseAlternativesMedium",
         "con-MDTB50ResponseAlternativesHard"
     ],
-    "Type": ["dseg", "dseg",
+    "Type": ["dseg",
         "func", "func", "func", "func", "func", "func", "func", "func", "func", "func",
         "func", "func", "func", "func", "func", "func", "func", "func", "func", "func",
         "func", "func", "func", "func", "func", "func", "func", "func", "func", "func",
@@ -75,7 +74,6 @@
     ],
     "MapDesc": [
         "MDTB parcellation into 10 regions",
-        "MDTB parcellation into spatially contiguous subregions",
         "Activity across tasks accounted for by left hand movements",
         "Activity across tasks accounted for by right hand movements",
         "Activity across tasks accounted for by saccadic eye movements",

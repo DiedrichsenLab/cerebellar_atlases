@@ -11,17 +11,13 @@
     "Diedrichsen J"
   ],
   "Maps": [
-  	"atl-Anatom",
-  	"atl-Anatom_desc-confid"
+  	"atl-Anatom"
   ],
   "Type": [
-  	"dseg",
-  	"confid"
+  	"dseg"
   ],
   "MapDesc": [
-    "Number of most probable compartment, Lobules and Nuclei",
-    "Probability of most probable department"
-  ],
+    "Number of most probable compartment, Lobules and Nuclei"],
   "Identifier": "Anatom",
   "License": "See LICENSE file",
   "Name": "Probabilistic atlas of cerebellar lobules",
