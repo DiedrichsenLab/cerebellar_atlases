@@ -7,31 +7,39 @@ import numpy as np
 import SUITPy as suit
 import nilearn.image as nli
 
-def make_atlas_list():
+def make_atlas_list(directories=['Diedrichsen_2009','Buckner_2011',
+                                 'Xue_2021','Ji_2019','King_2019']):
     """
         Makes the package list as json file
     """
     jsondict = {}
-    jsondict['Atlas'] = []
-    jsondict['ShortDesc'] = []
-    jsondict['Maps'] = []
-    jsondict['MapDesc'] = []
-    jsondict['Type'] = []
-    jsondict["LongDesc"]=[]
-    jsondict["ReferencesAndLinks"]=[]
-
-    directories =  ['Diedrichsen_2009','Buckner_2011','Xue_2021','Ji_2019','King_2019']
+    # jsondict['Atlas'] = []
+    # jsondict['ShortDesc'] = []
+    # jsondict['Maps'] = []
+    # jsondict['MapDesc'] = []
+    # jsondict['Type'] = []
+    # jsondict["LongDesc"]=[]
+    # jsondict["ReferencesAndLinks"]=[]
+    atlases = {}
     for name in directories:
-        with open(name +'/atlas_description.json') as jsonfile:
+        atlas_dict = {}
+        with open(f'../{name}' +'/atlas_description.json') as jsonfile:
             file = json.load(jsonfile)
-            jsondict["Atlas"].append(name)
-            jsondict["ShortDesc"].append(file["ShortDesc"])
-            jsondict["Maps"].append(file["Maps"])
-            jsondict["Type"].append(file["Type"])
-            jsondict["MapDesc"].append(file["MapDesc"])
-            jsondict["LongDesc"].append(file["LongDesc"])
-            jsondict["ReferencesAndLinks"].append(file["ReferencesAndLinks"])
-    with open('package_description.json','w') as outfile:
+            # jsondict["Atlas"].append(name)
+            # jsondict["ShortDesc"].append(file["ShortDesc"])
+            # jsondict["Maps"].append(file["Maps"])
+            # jsondict["Type"].append(file["Type"])
+            # jsondict["MapDesc"].append(file["MapDesc"])
+            # jsondict["LongDesc"].append(file["LongDesc"])
+            # jsondict["ReferencesAndLinks"].append(file["ReferencesAndLinks"])
+            atlas_dict["ShortDesc"] = file["ShortDesc"]
+            atlas_dict["Maps"] = file["Maps"]
+            atlas_dict["Type"] = file["Type"]
+            atlas_dict["MapDesc"] = file["MapDesc"]
+            atlas_dict["ReferencesAndLinks"] = file["ReferencesAndLinks"]
+        atlases[name] = atlas_dict
+        jsondict["atlases"] = atlases
+    with open('../package_description.json','w') as outfile:
         json.dump(jsondict,outfile,indent = 5)
 
 def rgbtxt_to_lut(filename):
