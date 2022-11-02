@@ -13,33 +13,18 @@ def make_atlas_list(directories=['Diedrichsen_2009','Buckner_2011',
         Makes the package list as json file
     """
     jsondict = {}
-    # jsondict['Atlas'] = []
-    # jsondict['ShortDesc'] = []
-    # jsondict['Maps'] = []
-    # jsondict['MapDesc'] = []
-    # jsondict['Type'] = []
-    # jsondict["LongDesc"]=[]
-    # jsondict["ReferencesAndLinks"]=[]
-    atlases = {}
     for name in directories:
         atlas_dict = {}
-        with open(f'../{name}' +'/atlas_description.json') as jsonfile:
+        with open(f'{name}' +'/atlas_description.json') as jsonfile:
             file = json.load(jsonfile)
-            # jsondict["Atlas"].append(name)
-            # jsondict["ShortDesc"].append(file["ShortDesc"])
-            # jsondict["Maps"].append(file["Maps"])
-            # jsondict["Type"].append(file["Type"])
-            # jsondict["MapDesc"].append(file["MapDesc"])
-            # jsondict["LongDesc"].append(file["LongDesc"])
-            # jsondict["ReferencesAndLinks"].append(file["ReferencesAndLinks"])
             atlas_dict["ShortDesc"] = file["ShortDesc"]
+            atlas_dict["LongDesc"] = file["LongDesc"]
             atlas_dict["Maps"] = file["Maps"]
             atlas_dict["Type"] = file["Type"]
             atlas_dict["MapDesc"] = file["MapDesc"]
             atlas_dict["ReferencesAndLinks"] = file["ReferencesAndLinks"]
-        atlases[name] = atlas_dict
-        jsondict["atlases"] = atlases
-    with open('../package_description.json','w') as outfile:
+        jsondict[name] = atlas_dict
+    with open('package_description.json','w') as outfile:
         json.dump(jsondict,outfile,indent = 5)
 
 def rgbtxt_to_lut(filename):
@@ -67,8 +52,8 @@ def lut_to_tsv(filename):
 def write_readme():
     with open('README.md','w') as out:
         out.write("# Cerebellar Atlases\n")
-        out.write("The cerebellar atlases are a collection of anatomical and functional atlases of the human cerebellum, both of parcellations and continuous maps.")
-        out.write("The collection is maintained as a [Github repository](https://github.com/diedrichsenlab/cerebellar_atlases).")
+        out.write("The cerebellar atlases are a collection of anatomical and functional atlases of the human cerebellum, both of parcellations and continuous maps. ")
+        out.write("The collection is maintained as a [Github repository](https://github.com/diedrichsenlab/cerebellar_atlases).\n\n")
         out.write("For every maps, we provide some the following files:\n" +
         "* ..._space-MNI.nii: volume file aligned to FNIRT MNI space\n" +
         "* ..._space-SUIT.nii: volume file aligned to SUIT space\n" +
@@ -79,17 +64,17 @@ def write_readme():
         out.write("The maps can also be viewed online using our [cerebellar atlas viewer](https://www.diedrichsenlab.org/imaging/AtlasViewer).\n\n")
         with open('package_description.json') as jsonfile:
             file = json.load(jsonfile)
-            for i,name in enumerate(file['Atlas']):
-                out.write("### " + file["ShortDesc"][i] + "\n")
-                out.write(file["LongDesc"][i] + "\n")
-                for j,f in enumerate(file["Maps"][i]):
-                    out.write("* " + f + ":    " + file["MapDesc"][i][j] +"\n")
+            for name,info in file.items():
+                out.write("### " + info["ShortDesc"] + "\n")
+                out.write(info["LongDesc"] + "\n")
+                for j,f in enumerate(info["Maps"]):
+                    out.write("* " + f + ":    " + info["MapDesc"][j] +"\n")
                 out.write("\nReferences and Links:\n")
-                for ref in file["ReferencesAndLinks"][i]:
+                for ref in info["ReferencesAndLinks"]:
                     out.write("* " + ref + "\n")
                 out.write("\n\n")
         out.write("## Reference and Licence\n")
-        out.write("The atlas collection was curated by the Jörn Diedrichsen and his lab and distributed . ")
+        out.write("The atlas collection was curated by the Diedrichsenlab. If not otherwise noted in the contributing paper, the atlases are distributed under a Creative Commons license CC BY-ND (Attribution - No derivatives).")
 
 def export_as_FSLatlas(name = None, atlas = None):
     root = ET.Element("root")
@@ -217,7 +202,7 @@ def crop_to_MNI(filesource,filenew,interp = 'continuous'):
 
 if __name__ == "__main__":
     # preprocess_all()
-   # make_atlas_list()
+    make_atlas_list()
     write_readme()
     # export_as_FSLatlas('Buckner','Buckner7')
     # rgbtxt_to_lut('atl-Xue10Sub1_desc-color.txt')

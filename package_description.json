@@ -1,237 +1,240 @@
 {
-     "atlases": {
-          "Diedrichsen_2009": {
-               "ShortDesc": "Probabilistic atlas for cerebellar lobules and nuclei: Diedrichsen (2009)",
-               "Maps": [
-                    "atl-Anatom"
-               ],
-               "Type": [
-                    "dseg"
-               ],
-               "MapDesc": [
-                    "Number of most probable compartment, Lobules and Nuclei"
-               ],
-               "ReferencesAndLinks": [
-                    "Diedrichsen, J., Balsters, J. H., Flavell, J., Cussans, E., & Ramnani, N. (2009). A probabilistic atlas of the human cerebellum. Neuroimage.",
-                    "Diedrichsen, J., Maderwald, S., Kuper, M., Thurling, M., Rabe, K., Gizewski, E. R., et al. (2011). Imaging the deep cerebellar nuclei: A probabilistic atlas and normalization procedure. Neuroimage.",
-                    "http://www.diedrichsenlab.org/imaging/propatlas.htm"
-               ]
-          },
-          "Buckner_2011": {
-               "ShortDesc": "Resting state network partcellation: Buckner et al. (2011)",
-               "Maps": [
-                    "atl-Buckner7",
-                    "atl-Buckner17"
-               ],
-               "Type": [
-                    "dseg",
-                    "dseg"
-               ],
-               "MapDesc": [
-                    "Assignment of cerebellar voxels to the 7 network parcellation",
-                    "Assignment of cerebellar voxels to the 17 network parcellation"
-               ],
-               "ReferencesAndLinks": [
-                    "Buckner, R. L., Krienen, F. M., Castellanos, A., Diaz, J. C. & Yeo, B. T. (2011). The organization of the human cerebellum estimated by intrinsic functional connectivity. J Neurophysiol 106, 2322\u00e2\u20ac\u201c2345."
-               ]
-          },
-          "Xue_2021": {
-               "ShortDesc": "Individual resting state parcellation: Xue et al. (2020)",
-               "Maps": [
-                    "atl-Xue10Sub1",
-                    "atl-Xue10Sub2"
-               ],
-               "Type": [
-                    "dseg",
-                    "dseg"
-               ],
-               "MapDesc": [
-                    "Individual parcellation for subject 1",
-                    "Individual parcellation for subject 2"
-               ],
-               "ReferencesAndLinks": [
-                    "Xue, A., Kong, R., Yang, Q., Eldaief, M. C., Angeli, P. A., Dinicola, L. M., \u00e2\u20ac\u00a6 Yeo, B. T. T. (2021). The detailed organization of the human cerebellum estimated by intrinsic functional connectivity within the individual. https://doi.org/10.1152/jn.00561.2020"
-               ]
-          },
-          "Ji_2019": {
-               "ShortDesc": "Subcortical restingstate parcellation: Ji et al. (2019)",
-               "Maps": [
-                    "atl-Ji10"
-               ],
-               "Type": [
-                    "dseg"
-               ],
-               "MapDesc": [
-                    "Subcortical resting state parcellation in 10 networks"
-               ],
-               "ReferencesAndLinks": [
-                    "Buckner, R. L., Krienen, F. M., Castellanos, A., Diaz, J. C. & Yeo, B. T. (2011). The organization of the human cerebellum estimated by intrinsic functional connectivity. J Neurophysiol 106, 2322\u00e2\u20ac\u201c2345."
-               ]
-          },
-          "King_2019": {
-               "ShortDesc": "Multi-domain task battery (MDTB) parcellation and contrasts: King et al. (2019)",
-               "Maps": [
-                    "atl-MDTB10",
-                    "con-MDTB01LeftHandMovement",
-                    "con-MDTB02RightHandMovement",
-                    "con-MDTB03Saccades",
-                    "con-MDTB04NoGo",
-                    "con-MDTB05Go",
-                    "con-MDTB06TheoryOfMind",
-                    "con-MDTB07ActionObservation",
-                    "con-MDTB08VideoKnots",
-                    "con-MDTB09UnpleasantScenes",
-                    "con-MDTB10PleasantScenes",
-                    "con-MDTB11Math",
-                    "con-MDTB12DigitJudgement",
-                    "con-MDTB13ObjectViewing",
-                    "con-MDTB14SadFaces",
-                    "con-MDTB15HappyFaces",
-                    "con-MDTB16IntervalTiming",
-                    "con-MDTB17MotorImagery",
-                    "con-MDTB18FingerSimple",
-                    "con-MDTB19FingerSequence",
-                    "con-MDTB20Verbal2Back-",
-                    "con-MDTB21Verbal2Back+",
-                    "con-MDTB22Object2Back-",
-                    "con-MDTB23Object2Back+",
-                    "con-MDTB24SpatialImagery",
-                    "con-MDTB25StroopIncongruent",
-                    "con-MDTB26StroopCongruent",
-                    "con-MDTB27VerbGeneration",
-                    "con-MDTB28WordReading",
-                    "con-MDTB29VisualSearchSmall",
-                    "con-MDTB30VisualSearchMedium",
-                    "con-MDTB31VisualSearchLarge",
-                    "con-MDTB32Rest",
-                    "con-MDTB33CPRO",
-                    "con-MDTB34PredictionTrue",
-                    "con-MDTB35PredictionViolated",
-                    "con-MDTB36PredictionScrambles",
-                    "con-MDTB37SpatialMapEasy",
-                    "con-MDTB38SpatialMapMedium",
-                    "con-MDTB39SpatialMapHard",
-                    "con-MDTB40NatureMovie",
-                    "con-MDTB41AnimatedMovie",
-                    "con-MDTB42LandscapeMovie",
-                    "con-MDTB43MentalRotationEasy",
-                    "con-MDTB44MentalRotationMedium",
-                    "con-MDTB45MentalRotationHard",
-                    "con-MDTB46BiologicalMotion",
-                    "con-MDTB47ScrambledMotion",
-                    "con-MDTB48ResponseAlternativesEasy",
-                    "con-MDTB49ResponseAlternativesMedium",
-                    "con-MDTB50ResponseAlternativesHard"
-               ],
-               "Type": [
-                    "dseg",
-                    "func",
-                    "func",
-                    "func",
-                    "func",
-                    "func",
-                    "func",
-                    "func",
-                    "func",
-                    "func",
-                    "func",
-                    "func",
-                    "func",
-                    "func",
-                    "func",
-                    "func",
-                    "func",
-                    "func",
-                    "func",
-                    "func",
-                    "func",
-                    "func",
-                    "func",
-                    "func",
-                    "func",
-                    "func",
-                    "func",
-                    "func",
-                    "func",
-                    "func",
-                    "func",
-                    "func",
-                    "func",
-                    "func",
-                    "func",
-                    "func",
-                    "func",
-                    "func",
-                    "func",
-                    "func",
-                    "func",
-                    "func",
-                    "func",
-                    "func",
-                    "func",
-                    "func",
-                    "func",
-                    "func",
-                    "func",
-                    "func",
-                    "func"
-               ],
-               "MapDesc": [
-                    "MDTB parcellation into 10 regions",
-                    "Activity across tasks accounted for by left hand movements",
-                    "Activity across tasks accounted for by right hand movements",
-                    "Activity across tasks accounted for by saccadic eye movements",
-                    "Go-Nogo task with words: No-go",
-                    "Go-Nogo task with words: go",
-                    "2 AFC task to indicate if a short story contains true or false belief",
-                    "Passive viewing of knots being tied",
-                    "Passive viewing of static knots",
-                    "IAPS affective pictures: Unpleasant scenes",
-                    "IAPS affective pictures: Pleasant scenes",
-                    "Simple multiplication equations: Judge true or false",
-                    "Control task for Math: detect 1 within 4 digits",
-                    "Passive viewing of objects or checkerboard patterns",
-                    "IAPS affective pictures: Sad facial expressions",
-                    "IAPS affective pictures: Happy facial expressions",
-                    "Auditory temporal judgement task between short (100ms) and long (175ms) ",
-                    "Imagine playing a game of tennis",
-                    "Series of six simple key presses of same finger",
-                    "Bimanual sequence of six key press",
-                    "Working memory 2-back task with words: no target ",
-                    "Working memory 2-back task with words: target ",
-                    "Working memory 2-back task with pictures: no target ",
-                    "Working memory 2-back task with pictures: target ",
-                    "Imagine to walk from kitchen to bathroom in your childhood home",
-                    "Stroop task: Incongruent trials",
-                    "Stroop task: Congruent trials",
-                    "Generate a verb for a displayed noun (dog->bark)",
-                    "Read the displayed noun: control for verb generation",
-                    "Find a target ('T') amoung distractors ('L'): 4 items",
-                    "Find a target ('T') amoung distractors ('L'): 8 items",
-                    "Find a target ('T') amoung distractors ('L'): 12 items",
-                    "Passive viewing of fixation cross ",
-                    "Concrete Permuted Rules Operations: Apply set of rules to 2 stimuli",
-                    "Predicting the end of a sequentially presented sentence: fulfilled prediction",
-                    "Predicting the end of a sequentially presented sentence: violated prediction",
-                    "Predicting the end of a sequentially presented sentence: scrambled sentence",
-                    "Memorize a spatial map of numbers for subsequent recall: 1 item",
-                    "Memorize a spatial map of numbers for subsequent recall: 4 items",
-                    "Memorize a spatial map of numbers for subsequent recall: 7 items",
-                    "Passive viewing of \"Planet Earth II: Islands\" movie: Animal movements",
-                    "Passive viewing of \"Up\" pixar movie: Social interactions",
-                    "Passive viewing of movie: Landscape scenes",
-                    "Mental rotation task between two objects: 0 degrees",
-                    "Mental rotation task between two objects: 50 degrees",
-                    "Mental rotation task between two objects: 150 degrees",
-                    "Point light walker: Judge whether gait is happy or sad",
-                    "Point light walker: Judge whether scrambled control stimulus moves fast or slow",
-                    "Execute fast keypress to imparative signal: 1 cued position",
-                    "Execute fast keypress to imparative signal: 2 cued positions",
-                    "Execute fast keypress to imparative signal: 4 cued position"
-               ],
-               "ReferencesAndLinks": [
-                    "King, M., Hernandez-Castillo, C.R., Poldrack, R.R., Ivry, R., and Diedrichsen, J. (2019). Functional Boundaries in the Human Cerebellum revealed by a Multi-Domain Task Battery. Nat. Neurosci."
-               ]
-          }
+     "Diedrichsen_2009": {
+          "ShortDesc": "Probabilistic atlas for cerebellar lobules and nuclei: Diedrichsen (2009)",
+          "LongDesc": "The anatomical definitions are based on the fMRI atlas of an individual cerebellum by Schmahmann et al. (2000). We manually identified the main lobules on MRI scans of 20 healthy young participants (ROIs 1-28). Using a different set of 23 participants, we also identified the deep cerebellar nuclei (ROIs 29-34).",
+          "Maps": [
+               "atl-Anatom"
+          ],
+          "Type": [
+               "dseg"
+          ],
+          "MapDesc": [
+               "Number of most probable compartment, Lobules and Nuclei"
+          ],
+          "ReferencesAndLinks": [
+               "Diedrichsen, J., Balsters, J. H., Flavell, J., Cussans, E., & Ramnani, N. (2009). A probabilistic atlas of the human cerebellum. Neuroimage.",
+               "Diedrichsen, J., Maderwald, S., Kuper, M., Thurling, M., Rabe, K., Gizewski, E. R., et al. (2011). Imaging the deep cerebellar nuclei: A probabilistic atlas and normalization procedure. Neuroimage.",
+               "http://www.diedrichsenlab.org/imaging/propatlas.htm"
+          ]
+     },
+     "Buckner_2011": {
+          "ShortDesc": "Resting state network partcellation: Buckner et al. (2011)",
+          "LongDesc": "Buckner et al. (2011) presented the first comprehensive functional atlas of the human cerebellum, based on the correlation of each cerebellar voxel and with the 7 or 17 cortical resting state networks, described in Yeo et al. Parcellation is based on the data from 1000 subjects. ",
+          "Maps": [
+               "atl-Buckner7",
+               "atl-Buckner17"
+          ],
+          "Type": [
+               "dseg",
+               "dseg"
+          ],
+          "MapDesc": [
+               "Assignment of cerebellar voxels to the 7 network parcellation",
+               "Assignment of cerebellar voxels to the 17 network parcellation"
+          ],
+          "ReferencesAndLinks": [
+               "Buckner, R. L., Krienen, F. M., Castellanos, A., Diaz, J. C. & Yeo, B. T. (2011). The organization of the human cerebellum estimated by intrinsic functional connectivity. J Neurophysiol 106, 2322\u20132345."
+          ]
+     },
+     "Xue_2021": {
+          "ShortDesc": "Individual resting state parcellation: Xue et al. (2020)",
+          "LongDesc": "Xue et al. (2020) provided two individual parcellations based on resting state data from 31 sessions for each. 10 Cortical networks were estimated using a hierarchical Bayesian model (Kong et al. 2019) and the cerebellum labeled based on the highest correlation with these networks.",
+          "Maps": [
+               "atl-Xue10Sub1",
+               "atl-Xue10Sub2"
+          ],
+          "Type": [
+               "dseg",
+               "dseg"
+          ],
+          "MapDesc": [
+               "Individual parcellation for subject 1",
+               "Individual parcellation for subject 2"
+          ],
+          "ReferencesAndLinks": [
+               "Xue, A., Kong, R., Yang, Q., Eldaief, M. C., Angeli, P. A., Dinicola, L. M., \u2026 Yeo, B. T. T. (2021). The detailed organization of the human cerebellum estimated by intrinsic functional connectivity within the individual. https://doi.org/10.1152/jn.00561.2020"
+          ]
+     },
+     "Ji_2019": {
+          "ShortDesc": "Subcortical restingstate parcellation: Ji et al. (2019)",
+          "LongDesc": "Ji et al. (2019) presented a parcellation of subcortical structures based on correlation with 10 cortical networks, based on the HCP resting state data.",
+          "Maps": [
+               "atl-Ji10"
+          ],
+          "Type": [
+               "dseg"
+          ],
+          "MapDesc": [
+               "Subcortical resting state parcellation in 10 networks"
+          ],
+          "ReferencesAndLinks": [
+               "Buckner, R. L., Krienen, F. M., Castellanos, A., Diaz, J. C. & Yeo, B. T. (2011). The organization of the human cerebellum estimated by intrinsic functional connectivity. J Neurophysiol 106, 2322\u20132345."
+          ]
+     },
+     "King_2019": {
+          "ShortDesc": "Multi-domain task battery (MDTB) parcellation and contrasts: King et al. (2019)",
+          "LongDesc": "King et al. (2019) provided an extensive characterization of the functional organization of the cerebellum of 24 healthy, young participants. The contast are for for 47 task conditions, accounted for the activity caused by left hand, right hand, and eye movements. All contrast maps are relative to the mean activitiy across all tasks. The parcellation into 10 regions is defined from the task-evoked activity across all tasks.",
+          "Maps": [
+               "atl-MDTB10",
+               "con-MDTB01LeftHandMovement",
+               "con-MDTB02RightHandMovement",
+               "con-MDTB03Saccades",
+               "con-MDTB04NoGo",
+               "con-MDTB05Go",
+               "con-MDTB06TheoryOfMind",
+               "con-MDTB07ActionObservation",
+               "con-MDTB08VideoKnots",
+               "con-MDTB09UnpleasantScenes",
+               "con-MDTB10PleasantScenes",
+               "con-MDTB11Math",
+               "con-MDTB12DigitJudgement",
+               "con-MDTB13ObjectViewing",
+               "con-MDTB14SadFaces",
+               "con-MDTB15HappyFaces",
+               "con-MDTB16IntervalTiming",
+               "con-MDTB17MotorImagery",
+               "con-MDTB18FingerSimple",
+               "con-MDTB19FingerSequence",
+               "con-MDTB20Verbal2Back-",
+               "con-MDTB21Verbal2Back+",
+               "con-MDTB22Object2Back-",
+               "con-MDTB23Object2Back+",
+               "con-MDTB24SpatialImagery",
+               "con-MDTB25StroopIncongruent",
+               "con-MDTB26StroopCongruent",
+               "con-MDTB27VerbGeneration",
+               "con-MDTB28WordReading",
+               "con-MDTB29VisualSearchSmall",
+               "con-MDTB30VisualSearchMedium",
+               "con-MDTB31VisualSearchLarge",
+               "con-MDTB32Rest",
+               "con-MDTB33CPRO",
+               "con-MDTB34PredictionTrue",
+               "con-MDTB35PredictionViolated",
+               "con-MDTB36PredictionScrambles",
+               "con-MDTB37SpatialMapEasy",
+               "con-MDTB38SpatialMapMedium",
+               "con-MDTB39SpatialMapHard",
+               "con-MDTB40NatureMovie",
+               "con-MDTB41AnimatedMovie",
+               "con-MDTB42LandscapeMovie",
+               "con-MDTB43MentalRotationEasy",
+               "con-MDTB44MentalRotationMedium",
+               "con-MDTB45MentalRotationHard",
+               "con-MDTB46BiologicalMotion",
+               "con-MDTB47ScrambledMotion",
+               "con-MDTB48ResponseAlternativesEasy",
+               "con-MDTB49ResponseAlternativesMedium",
+               "con-MDTB50ResponseAlternativesHard"
+          ],
+          "Type": [
+               "dseg",
+               "func",
+               "func",
+               "func",
+               "func",
+               "func",
+               "func",
+               "func",
+               "func",
+               "func",
+               "func",
+               "func",
+               "func",
+               "func",
+               "func",
+               "func",
+               "func",
+               "func",
+               "func",
+               "func",
+               "func",
+               "func",
+               "func",
+               "func",
+               "func",
+               "func",
+               "func",
+               "func",
+               "func",
+               "func",
+               "func",
+               "func",
+               "func",
+               "func",
+               "func",
+               "func",
+               "func",
+               "func",
+               "func",
+               "func",
+               "func",
+               "func",
+               "func",
+               "func",
+               "func",
+               "func",
+               "func",
+               "func",
+               "func",
+               "func",
+               "func"
+          ],
+          "MapDesc": [
+               "MDTB parcellation into 10 regions",
+               "Activity across tasks accounted for by left hand movements",
+               "Activity across tasks accounted for by right hand movements",
+               "Activity across tasks accounted for by saccadic eye movements",
+               "Go-Nogo task with words: No-go",
+               "Go-Nogo task with words: go",
+               "2 AFC task to indicate if a short story contains true or false belief",
+               "Passive viewing of knots being tied",
+               "Passive viewing of static knots",
+               "IAPS affective pictures: Unpleasant scenes",
+               "IAPS affective pictures: Pleasant scenes",
+               "Simple multiplication equations: Judge true or false",
+               "Control task for Math: detect 1 within 4 digits",
+               "Passive viewing of objects or checkerboard patterns",
+               "IAPS affective pictures: Sad facial expressions",
+               "IAPS affective pictures: Happy facial expressions",
+               "Auditory temporal judgement task between short (100ms) and long (175ms) ",
+               "Imagine playing a game of tennis",
+               "Series of six simple key presses of same finger",
+               "Bimanual sequence of six key press",
+               "Working memory 2-back task with words: no target ",
+               "Working memory 2-back task with words: target ",
+               "Working memory 2-back task with pictures: no target ",
+               "Working memory 2-back task with pictures: target ",
+               "Imagine to walk from kitchen to bathroom in your childhood home",
+               "Stroop task: Incongruent trials",
+               "Stroop task: Congruent trials",
+               "Generate a verb for a displayed noun (dog->bark)",
+               "Read the displayed noun: control for verb generation",
+               "Find a target ('T') amoung distractors ('L'): 4 items",
+               "Find a target ('T') amoung distractors ('L'): 8 items",
+               "Find a target ('T') amoung distractors ('L'): 12 items",
+               "Passive viewing of fixation cross ",
+               "Concrete Permuted Rules Operations: Apply set of rules to 2 stimuli",
+               "Predicting the end of a sequentially presented sentence: fulfilled prediction",
+               "Predicting the end of a sequentially presented sentence: violated prediction",
+               "Predicting the end of a sequentially presented sentence: scrambled sentence",
+               "Memorize a spatial map of numbers for subsequent recall: 1 item",
+               "Memorize a spatial map of numbers for subsequent recall: 4 items",
+               "Memorize a spatial map of numbers for subsequent recall: 7 items",
+               "Passive viewing of \"Planet Earth II: Islands\" movie: Animal movements",
+               "Passive viewing of \"Up\" pixar movie: Social interactions",
+               "Passive viewing of movie: Landscape scenes",
+               "Mental rotation task between two objects: 0 degrees",
+               "Mental rotation task between two objects: 50 degrees",
+               "Mental rotation task between two objects: 150 degrees",
+               "Point light walker: Judge whether gait is happy or sad",
+               "Point light walker: Judge whether scrambled control stimulus moves fast or slow",
+               "Execute fast keypress to imparative signal: 1 cued position",
+               "Execute fast keypress to imparative signal: 2 cued positions",
+               "Execute fast keypress to imparative signal: 4 cued position"
+          ],
+          "ReferencesAndLinks": [
+               "King, M., Hernandez-Castillo, C.R., Poldrack, R.R., Ivry, R., and Diedrichsen, J. (2019). Functional Boundaries in the Human Cerebellum revealed by a Multi-Domain Task Battery. Nat. Neurosci."
+          ]
      }
 }
