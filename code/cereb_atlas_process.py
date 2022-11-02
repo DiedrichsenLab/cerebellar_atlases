@@ -68,12 +68,15 @@ def write_readme():
     with open('README.md','w') as out:
         out.write("# Cerebellar Atlases\n")
         out.write("The cerebellar atlases are a collection of anatomical and functional atlases of the human cerebellum, both of parcellations and continuous maps.")
-        out.write("For every maps, we provide some the following files\n" +
+        out.write("The collection is maintained as a [Github repository](https://github.com/diedrichsenlab/cerebellar_atlases).")
+        out.write("For every maps, we provide some the following files:\n" +
         "* ..._space-MNI.nii: volume file aligned to FNIRT MNI space\n" +
         "* ..._space-SUIT.nii: volume file aligned to SUIT space\n" +
         "* ....tsv: Color and label lookup table for parcellations\n" +
-        "* ....gii: Data projected to surface-based representation of the cerebellum (Diedrichsen & Zotow, 2015).\n")
-        out.write("The atlases can also be viewed online using out cerebellar atlas tool for quick reference!\n\n")
+        "* ....gii: Data projected to surface-based representation of the cerebellum (Diedrichsen & Zotow, 2015).\n\n")
+        out.write("The atlases are organized by the first author / year of the main paper\n\n")
+
+        out.write("The maps can also be viewed online using our [cerebellar atlas viewer](https://www.diedrichsenlab.org/imaging/AtlasViewer).\n\n")
         with open('package_description.json') as jsonfile:
             file = json.load(jsonfile)
             for i,name in enumerate(file['Atlas']):
@@ -86,7 +89,7 @@ def write_readme():
                     out.write("* " + ref + "\n")
                 out.write("\n\n")
         out.write("## Reference and Licence\n")
-        out.write("The atlas collection was curated by the Jörn Diedrichsen and his lab. ")
+        out.write("The atlas collection was curated by the Jörn Diedrichsen and his lab and distributed . ")
 
 def export_as_FSLatlas(name = None, atlas = None):
     root = ET.Element("root")
@@ -214,7 +217,7 @@ def crop_to_MNI(filesource,filenew,interp = 'continuous'):
 
 if __name__ == "__main__":
     # preprocess_all()
-    make_atlas_list()
+   # make_atlas_list()
     write_readme()
     # export_as_FSLatlas('Buckner','Buckner7')
     # rgbtxt_to_lut('atl-Xue10Sub1_desc-color.txt')
@@ -227,7 +230,7 @@ if __name__ == "__main__":
     # lut_to_tsv('MDTB_2019/atl-MDTB10')
     # lut_to_tsv('Ji_2010/atl-Ji10')
 
-    all_maps_to_surf()
+    # all_maps_to_surf()
     # make_MDTB_contrasts()
     # map_to_surf('MDTB_2019/atl-MDTB10',isLabel = True)
     # crop_to_MNI('Xue_2021/atl-Xue10Sub1.nii','atl-Xue/atl-Xue10Sub1_space-MNI.nii',interp='nearest')
