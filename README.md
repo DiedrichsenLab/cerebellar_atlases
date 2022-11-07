@@ -1,15 +1,19 @@
 # Cerebellar Atlases
-The cerebellar atlases are a collection of anatomical and functional atlases of the human cerebellum, both of parcellations and continuous maps.For every maps, we provide some the following files
+The cerebellar atlases are a collection of anatomical and functional atlases of the human cerebellum, both of parcellations and continuous maps. The collection is maintained as a [Github repository](https://github.com/diedrichsenlab/cerebellar_atlases).
+
+For every maps, we provide some the following files:
 * ..._space-MNI.nii: volume file aligned to FNIRT MNI space
 * ..._space-SUIT.nii: volume file aligned to SUIT space
 * ....tsv: Color and label lookup table for parcellations
 * ....gii: Data projected to surface-based representation of the cerebellum (Diedrichsen & Zotow, 2015).
-The atlases can also be viewed online using out cerebellar atlas tool for quick reference!
+
+The atlases are organized by the first author / year of the main paper
+
+The maps can also be viewed online using our [cerebellar atlas viewer](https://www.diedrichsenlab.org/imaging/AtlasViewer).
 
 ### Probabilistic atlas for cerebellar lobules and nuclei: Diedrichsen (2009)
 The anatomical definitions are based on the fMRI atlas of an individual cerebellum by Schmahmann et al. (2000). We manually identified the main lobules on MRI scans of 20 healthy young participants (ROIs 1-28). Using a different set of 23 participants, we also identified the deep cerebellar nuclei (ROIs 29-34).
 * atl-Anatom:    Number of most probable compartment, Lobules and Nuclei
-* atl-Anatom_desc-confid:    Probability of most probable department
 
 References and Links:
 * Diedrichsen, J., Balsters, J. H., Flavell, J., Cussans, E., & Ramnani, N. (2009). A probabilistic atlas of the human cerebellum. Neuroimage.
@@ -46,7 +50,6 @@ References and Links:
 ### Multi-domain task battery (MDTB) parcellation and contrasts: King et al. (2019)
 King et al. (2019) provided an extensive characterization of the functional organization of the cerebellum of 24 healthy, young participants. The contast are for for 47 task conditions, accounted for the activity caused by left hand, right hand, and eye movements. All contrast maps are relative to the mean activitiy across all tasks. The parcellation into 10 regions is defined from the task-evoked activity across all tasks.
 * atl-MDTB10:    MDTB parcellation into 10 regions
-* atl-MDTB10-subregions:    MDTB parcellation into spatially contiguous subregions
 * con-MDTB01LeftHandMovement:    Activity across tasks accounted for by left hand movements
 * con-MDTB02RightHandMovement:    Activity across tasks accounted for by right hand movements
 * con-MDTB03Saccades:    Activity across tasks accounted for by saccadic eye movements
@@ -103,4 +106,4 @@ References and Links:
 
 
 ## Reference and Licence
-The atlas collection was curated by the Jörn Diedrichsen and his lab. 
+The atlas collection was curated by the Diedrichsenlab. If not otherwise noted in the contributing paper, the atlases are distributed under a Creative Commons license CC BY-ND (Attribution - No derivatives).

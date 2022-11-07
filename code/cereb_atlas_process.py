@@ -7,30 +7,23 @@ import numpy as np
 import SUITPy as suit
 import nilearn.image as nli
 
-def make_atlas_list():
+def make_atlas_list(directories=['Diedrichsen_2009','Buckner_2011',
+                                 'Xue_2021','Ji_2019','King_2019']):
     """
         Makes the package list as json file
     """
     jsondict = {}
-    jsondict['Atlas'] = []
-    jsondict['ShortDesc'] = []
-    jsondict['Maps'] = []
-    jsondict['MapDesc'] = []
-    jsondict['Type'] = []
-    jsondict["LongDesc"]=[]
-    jsondict["ReferencesAndLinks"]=[]
-
-    directories =  ['Diedrichsen_2009','Buckner_2011','Xue_2021','Ji_2019','King_2019']
     for name in directories:
-        with open(name +'/atlas_description.json') as jsonfile:
+        atlas_dict = {}
+        with open(f'{name}' +'/atlas_description.json') as jsonfile:
             file = json.load(jsonfile)
-            jsondict["Atlas"].append(name)
-            jsondict["ShortDesc"].append(file["ShortDesc"])
-            jsondict["Maps"].append(file["Maps"])
-            jsondict["Type"].append(file["Type"])
-            jsondict["MapDesc"].append(file["MapDesc"])
-            jsondict["LongDesc"].append(file["LongDesc"])
-            jsondict["ReferencesAndLinks"].append(file["ReferencesAndLinks"])
+            atlas_dict["ShortDesc"] = file["ShortDesc"]
+            atlas_dict["LongDesc"] = file["LongDesc"]
+            atlas_dict["Maps"] = file["Maps"]
+            atlas_dict["Type"] = file["Type"]
+            atlas_dict["MapDesc"] = file["MapDesc"]
+            atlas_dict["ReferencesAndLinks"] = file["ReferencesAndLinks"]
+        jsondict[name] = atlas_dict
     with open('package_description.json','w') as outfile:
         json.dump(jsondict,outfile,indent = 5)
 
@@ -59,26 +52,29 @@ def lut_to_tsv(filename):
 def write_readme():
     with open('README.md','w') as out:
         out.write("# Cerebellar Atlases\n")
-        out.write("The cerebellar atlases are a collection of anatomical and functional atlases of the human cerebellum, both of parcellations and continuous maps.")
-        out.write("For every maps, we provide some the following files\n" +
+        out.write("The cerebellar atlases are a collection of anatomical and functional atlases of the human cerebellum, both of parcellations and continuous maps. ")
+        out.write("The collection is maintained as a [Github repository](https://github.com/diedrichsenlab/cerebellar_atlases).\n\n")
+        out.write("For every maps, we provide some the following files:\n" +
         "* ..._space-MNI.nii: volume file aligned to FNIRT MNI space\n" +
         "* ..._space-SUIT.nii: volume file aligned to SUIT space\n" +
         "* ....tsv: Color and label lookup table for parcellations\n" +
-        "* ....gii: Data projected to surface-based representation of the cerebellum (Diedrichsen & Zotow, 2015).\n")
-        out.write("The atlases can also be viewed online using out cerebellar atlas tool for quick reference!\n\n")
+        "* ....gii: Data projected to surface-based representation of the cerebellum (Diedrichsen & Zotow, 2015).\n\n")
+        out.write("The atlases are organized by the first author / year of the main paper\n\n")
+
+        out.write("The maps can also be viewed online using our [cerebellar atlas viewer](https://www.diedrichsenlab.org/imaging/AtlasViewer).\n\n")
         with open('package_description.json') as jsonfile:
             file = json.load(jsonfile)
-            for i,name in enumerate(file['Atlas']):
-                out.write("### " + file["ShortDesc"][i] + "\n")
-                out.write(file["LongDesc"][i] + "\n")
-                for j,f in enumerate(file["Maps"][i]):
-                    out.write("* " + f + ":    " + file["MapDesc"][i][j] +"\n")
+            for name,info in file.items():
+                out.write("### " + info["ShortDesc"] + "\n")
+                out.write(info["LongDesc"] + "\n")
+                for j,f in enumerate(info["Maps"]):
+                    out.write("* " + f + ":    " + info["MapDesc"][j] +"\n")
                 out.write("\nReferences and Links:\n")
-                for ref in file["ReferencesAndLinks"][i]:
+                for ref in info["ReferencesAndLinks"]:
                     out.write("* " + ref + "\n")
                 out.write("\n\n")
         out.write("## Reference and Licence\n")
-        out.write("The atlas collection was curated by the Jörn Diedrichsen and his lab. ")
+        out.write("The atlas collection was curated by the Diedrichsenlab. If not otherwise noted in the contributing paper, the atlases are distributed under a Creative Commons license CC BY-ND (Attribution - No derivatives).")
 
 def export_as_FSLatlas(name = None, atlas = None):
     root = ET.Element("root")
@@ -219,7 +215,7 @@ if __name__ == "__main__":
     # lut_to_tsv('MDTB_2019/atl-MDTB10')
     # lut_to_tsv('Ji_2010/atl-Ji10')
 
-    all_maps_to_surf()
+    # all_maps_to_surf()
     # make_MDTB_contrasts()
     # map_to_surf('MDTB_2019/atl-MDTB10',isLabel = True)
     # crop_to_MNI('Xue_2021/atl-Xue10Sub1.nii','atl-Xue/atl-Xue10Sub1_space-MNI.nii',interp='nearest')
