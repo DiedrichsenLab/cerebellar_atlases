@@ -105,5 +105,13 @@ References and Links:
 * King, M., Hernandez-Castillo, C.R., Poldrack, R.R., Ivry, R., and Diedrichsen, J. (2019). Functional Boundaries in the Human Cerebellum revealed by a Multi-Domain Task Battery. Nat. Neurosci.
 
 
+### Functional cerebellar atlas from fusion across task-based datasets (unpublished alpha version)
+Alpha version of functional parcellation into 34 symmetric regions. The map is based on the probabilistic integration of 4 datasets (King et al., 2019; Nakai & Nishimoto, 2010; Individual Brain Charting project, Pinho et al., 2021; and an unpublished high-resolution version of the MDTB). The color scheme reflects the functional similarity of different regions. The map has not been published or peer reviewed. It is a preliminary version for illustrative purposes only, and is subject to change. Do not use or cite without permission.
+* atl-NettekovenSym34:    Symmetric 34-region parcellation based on 4 deep task-based datasets
+
+References and Links:
+* Nettekoven, Zhi, Pinho, Shashahani, Diedrichsen (in preparation). Please do not use / cite without permission by authors.
+
+
 ## Reference and Licence
 The atlas collection was curated by the Diedrichsenlab. If not otherwise noted in the contributing paper, the atlases are distributed under a Creative Commons license CC BY-ND (Attribution - No derivatives).
