@@ -26,7 +26,7 @@
   "ShortDesc": "Subcortical restingstate parcellation: Ji et al. (2019)",
   "LongDesc": "Ji et al. (2019) presented a parcellation of subcortical structures based on correlation with 10 cortical networks, based on the HCP resting state data.",
   "ReferencesAndLinks": [
-    "Buckner, R. L., Krienen, F. M., Castellanos, A., Diaz, J. C. & Yeo, B. T. (2011). The organization of the human cerebellum estimated by intrinsic functional connectivity. J Neurophysiol 106, 2322–2345."
+    "Ji, J. L., Spronk, M., Kulkarni, K., Repovš, G., Anticevic, A., & Cole, M. W. (2019). Mapping the human brain's cortical-subcortical functional network organization. Neuroimage, 185, 35-57."
   ],
   "res": {}
 }
