@@ -1,0 +1,13 @@
+cff-version: 1.2.0
+message: "Please cite this dataset as below."
+authors:
+- family-names: "Diedrichsen"
+  given-names: "Jörn"
+  orcid: "https://orcid.org/0000-0003-0264-8532"
+- family-namnes: "Zhi"
+  given-names: "Da"
+  orcid: "https://orcid.org/0000-0001-6023-6523"
+title: "A collection of Atlasses for the human cerebellum"
+version: 1.0
+date-released: 2022-11-07
+url: "https://github.com/DiedrichsenLab/cerebellar_atlases"
