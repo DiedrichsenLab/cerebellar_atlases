@@ -10,7 +10,8 @@ import nilearn.image as nli
 def make_atlas_list(directories=['Diedrichsen_2009','Buckner_2011',
                                  'Xue_2021','Ji_2019','King_2019','Nettekoven_unp']):
     """
-        Makes the package list as json file
+        Makes the package_description.json file
+        from the individual atlas_description.json files
     """
     jsondict = {}
     for name in directories:
@@ -28,6 +29,11 @@ def make_atlas_list(directories=['Diedrichsen_2009','Buckner_2011',
         json.dump(jsondict,outfile,indent = 5)
 
 def rgbtxt_to_lut(filename):
+    """ Takes an rgb text file and converts it to a .lut file
+
+    Args:
+        filename (_type_): name of rgb text file
+    """
     D=pd.read_csv(filename,header=None,delimiter=' ')
     L=pd.DataFrame({
             "key":D[0],
@@ -38,6 +44,11 @@ def rgbtxt_to_lut(filename):
     L.to_csv(filename+'.lut',header=None,sep=' ')
 
 def lut_to_tsv(filename):
+    """ Takes a .lut file and converts it to a .tsv file
+
+    Args:
+        filename (_type_): name of .lut file
+    """
     D=pd.read_csv(filename + '.lut',header=None,delimiter=' ')
     hexcolor = []
     for i in range(D.shape[0]):
@@ -50,6 +61,8 @@ def lut_to_tsv(filename):
 
 
 def write_readme():
+    """ Automatically generates the README.md file from the package_description.json file
+    """
     with open('README.md','w') as out:
         out.write("# Cerebellar Atlases\n")
         out.write("The cerebellar atlases are a collection of anatomical and functional atlases of the human cerebellum, both of parcellations and continuous maps. ")
@@ -77,6 +90,13 @@ def write_readme():
         out.write("The atlas collection was curated by the Diedrichsenlab. If not otherwise noted in the contributing paper, the atlases are distributed under a Creative Commons license CC BY-ND (Attribution - No derivatives).")
 
 def export_as_FSLatlas(name = None, atlas = None):
+    """ generate the xml file for Atlas Widget in FSLeyes
+    Does not work yet
+
+    Args:
+        name (str): Directory of 
+        atlas (str): 
+    """
     root = ET.Element("root")
     doc = ET.SubElement(root, "doc")
     ET.SubElement(doc, "field1", name="blah").text = "some value1"
@@ -85,31 +105,6 @@ def export_as_FSLatlas(name = None, atlas = None):
     tree = ET.ElementTree(root)
     tree.write("filename.xml")
 
-def make_MDTB_contrasts():
-    """
-        Generates the MDTB contrasts from the atlas package with correct naming
-    """
-    D = pd.read_csv('../MDTB_maps/contrast_list.csv')
-    for at in ['MNI']:
-        for c in range(50):
-            images = D[D.ConNo == c+1]
-            num_img = images.Contrast.shape[0]
-            nii = []
-            dir = os.path.join('..', 'MDTB_maps', at + '_group_contrasts')
-            X = []
-            for i, file in enumerate(images.Filename):
-                nii = nb.load(os.path.join(dir,file + '.nii'))
-                X.append(nii.get_fdata())
-            pass
-            if num_img==2:
-                Y = (X[0]+X[1])/2
-            else:
-                Y = X[0]
-            img = nb.Nifti1Image(Y, nii.affine)
-            filename = os.path.join('MDTB_2019',f'con-MDTB{images.ConNo.iloc[0]:02}{images.Contrast.iloc[0]}_space-{at}.nii')
-            img.set_data_dtype('int16')
-            nb.save(img, filename)
-    pass
 
 def preprocess_nifti(fname,isLabel=True):
     """
@@ -176,6 +171,32 @@ def all_maps_to_surf():
                         # map_to_surf(os.path.join(atlname,map),False)
     pass
 
+
+def make_MDTB_contrasts():
+    """
+        Generates the MDTB contrasts from the atlas package with correct naming
+    """
+    D = pd.read_csv('../MDTB_maps/contrast_list.csv')
+    for at in ['MNI']:
+        for c in range(50):
+            images = D[D.ConNo == c+1]
+            num_img = images.Contrast.shape[0]
+            nii = []
+            dir = os.path.join('..', 'MDTB_maps', at + '_group_contrasts')
+            X = []
+            for i, file in enumerate(images.Filename):
+                nii = nb.load(os.path.join(dir,file + '.nii'))
+                X.append(nii.get_fdata())
+            pass
+            if num_img==2:
+                Y = (X[0]+X[1])/2
+            else:
+                Y = X[0]
+            img = nb.Nifti1Image(Y, nii.affine)
+            filename = os.path.join('MDTB_2019',f'con-MDTB{images.ConNo.iloc[0]:02}{images.Contrast.iloc[0]}_space-{at}.nii')
+            img.set_data_dtype('int16')
+            nb.save(img, filename)
+    pass
 
 def make_MDTB_json():
     """

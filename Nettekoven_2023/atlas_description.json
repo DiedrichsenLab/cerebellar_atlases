@@ -4,23 +4,42 @@
     "Zhi, D",
     "Pinho, A L",
     "Shashahani, L",
+    "Saadon-Grosman, N",
+    "Buckner, R L",
     "Diedrichsen, J"
   ],
   "BIDSVersion": "1.1.0",
   "Curators": [
     "Diedrichsen J"
   ],
-  "Identifier": "Nettekoven",
-  "License": "Unpublished Alpha-version. Please do not use / cite without written permission",
-  "ShortDesc": "Functional cerebellar atlas from fusion across task-based datasets (unpublished alpha version)",
-  "Maps": ["atl-NettekovenSym34"],
+  "Identifier": "Nettekoven2023",
+  "License": "see LICENSE file",
+  "ShortDesc": "Functional cerebellar atlas from fusion across task-based datasets",
+  "Maps": ["atl-NettekovenSym32",
+           "atl-NettekovenAsym32",
+           "atl-NettekovenSym68",
+           "atl-NettekovenAsym68",
+           "atl-NettekovenSym128",
+           "atl-NettekovenAsym128"],
   "Type": [
-    "dseg"],
+          "dseg",
+          "dseg",
+          "dseg",
+          "dseg",
+          "dseg",
+          "dseg"
+  ],
   "MapDesc": [
-    "Symmetric 34-region parcellation based on 4 deep task-based datasets"],
+    "Symmetric 32-region parcellation",
+    "Asymmetric 32-region parcellation",
+    "Symmetric 68-region parcellation (functional subregions)",
+    "Asymmetric 68-region parcellation (functional subregions)",
+    "Symmetric 128-region parcellation (spatial subregions)",
+    "Asymmetric 128-region parcellation (spatial subregions)"
+   ],
   "ReferencesAndLinks": [
-    "Nettekoven, Zhi, Pinho, Shashahani, Diedrichsen (in preparation). Please do not use / cite without permission by authors."
+    "Nettekoven, C. et al. A hierarchical atlas of the human cerebellum for functional precision mapping. BioRviv (2023). DOI:10.1101/2023.09.14.557689v1"
   ],
   "res": {},
-  "LongDesc": "Alpha version of functional parcellation into 34 symmetric regions. The map is based on the probabilistic integration of 4 datasets (King et al., 2019; Nakai & Nishimoto, 2010; Individual Brain Charting project, Pinho et al., 2021; and an unpublished high-resolution version of the MDTB). The color scheme reflects the functional similarity of different regions. The map has not been published or peer reviewed. It is a preliminary version for illustrative purposes only, and is subject to change. Do not use or cite without permission."
+  "LongDesc": "Functional parcellation into 68 or 32 symmetric functional regions (matching between . A additional version with 128 regions that subdivides these regions spatially is available. The maps are based on the probabilistic integration of 7 task-based datasets. The color scheme reflects the functional similarity of different regions. The paper is not final."
 }
