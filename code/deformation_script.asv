@@ -1,0 +1,11 @@
+% Instructional script of how to use the deformation to move the 
+% cerebellar atlasses between different atlas spaces using matlab. 
+% requirements: SPM12 
+% - SUIT (github.com/jdiedrichsen/suit) 
+% - spmdefs (github.com/DiedrichsenLab/spmdefs) 
+%% Test 1: Deform MNISym into SUIT 
+[Def,mat]=spmdefs_get_def('../tpl-SUIT/tpl-SUIT_from-MNI152NLin2009cSymC_mode-image_xfm.nii')
+fname = '../tpl-MNI152NLin2009cSymC_T1w.nii
+
+
+%% Test_2: Deform SUIT into MNISym 
