@@ -19,9 +19,7 @@
     "atl-NettekovenSym32",
     "atl-NettekovenAsym32",
     "atl-NettekovenSym68",
-    "atl-NettekovenAsym68",
-    "atl-NettekovenSym128",
-    "atl-NettekovenAsym128"
+    "atl-NettekovenAsym68"
   ],
   "Type": [
     "dseg",
