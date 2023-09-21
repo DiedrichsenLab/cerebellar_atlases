@@ -92,3 +92,4 @@ target/
 .mypy_cache/
 *.m~
 *.pyc
+code/deformation_script.asv
