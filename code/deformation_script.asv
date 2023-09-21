@@ -4,8 +4,32 @@
 % - SUIT (github.com/jdiedrichsen/suit) 
 % - spmdefs (github.com/DiedrichsenLab/spmdefs) 
 %% Test 1: Deform MNISym into SUIT 
-[Def,mat]=spmdefs_get_def('../tpl-SUIT/tpl-SUIT_from-MNI152NLin2009cSymC_mode-image_xfm.nii')
-fname = '../tpl-MNI152NLin2009cSymC_T1w.nii
-
+[Def,mat]=spmdefs_get_def('../tpl-SUIT/tpl-SUIT_from-MNI152NLin2009cSymC_mode-image_xfm.nii');
+fname = '../tpl-MNI152NLin2009cSymC/tpl-MNI152NLin2009cSymC_T1w.nii';
+ofname = '../tpl-SUIT/MNISym_into-SUIT.nii';
+spmdefs_apply_def(Def,mat,fname,1,ofname);
 
 %% Test_2: Deform SUIT into MNISym 
+[Def,mat]=spmdefs_get_def('../tpl-MNI152NLin2009cSymC/tpl-MNI152NLin2009cSymC_from-SUIT_mode-image_xfm.nii');
+fname = '../tpl-SUIT/tpl-SUIT_res-1_T1w.nii';
+ofname = '../tpl-MNI152NLin2009cSymC/SUIT_into-MNISym.nii';
+spmdefs_apply_def(Def,mat,fname,1,ofname);
+
+%% Example 1: Deform a discrete segmentation file using nearest neighbor interpolation
+[Def,mat]=spmdefs_get_def('../tpl-MNI152NLin2009cSymC/tpl-MNI152NLin2009cSymC_from-SUIT_mode-image_xfm.nii');
+fname = '../Diedrichsen_2009/atl-Anatom_space-SUIT_dseg.nii';
+ofname = '../Diedrichsen_2009/atl-Anatom_space-MNISym_dir_dseg.nii';
+spmdefs_apply_def(Def,mat,fname,0,ofname);
+
+%% Example 2: Deform a probabilistic segementation using trilinear interpolation - make symmetric 
+% then do winner-take-all assignment
+[Def,mat]=spmdefs_get_def('../tpl-MNI152NLin2009cSymC/tpl-MNI152NLin2009cSymC_from-SUIT_mode-image_xfm.nii');
+fname = '../Diedrichsen_2009/atl-Anatom_space-SUIT_pseg.nii';
+ofname = '../Diedrichsen_2009/atl-Anatom_space-MNISym_pseg.nii';
+spmdefs_apply_def(Def,mat,fname,1,ofname);
+V=spm_vol(ofname);
+X=spm_read_vols(V);
+X=(X + flipdim(X,1))/2; 
+[x,win] = max(X,[],4);
+win(x==0]=0; 
+V=spm_vol('../Diedrichsen_2009/atl-Anatom_space-MNISym_dir_dseg.nii');

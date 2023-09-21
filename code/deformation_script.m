@@ -17,6 +17,32 @@ spmdefs_apply_def(Def,mat,fname,1,ofname);
 
 %% Example 1: Deform a discrete segmentation file using nearest neighbor interpolation
 [Def,mat]=spmdefs_get_def('../tpl-MNI152NLin2009cSymC/tpl-MNI152NLin2009cSymC_from-SUIT_mode-image_xfm.nii');
-fname = '../atl-Diedrichsen2009/tpl-SUIT_res-1_T1w.nii';
-ofname = '../atl-Diedrichsen2009/SUIT_into-MNISym.nii';
+fname = '../Diedrichsen_2009/atl-Anatom_space-SUIT_dseg.nii';
+ofname = '../Diedrichsen_2009/atl-Anatom_space-MNISym_dir_dseg.nii';
+spmdefs_apply_def(Def,mat,fname,0,ofname);
+
+%% Example 2: Deform a probabilistic segementation using trilinear interpolation
+% then do winner-take-all assignment
+[Def,mat]=spmdefs_get_def('../tpl-MNI152NLin2009cSymC/tpl-MNI152NLin2009cSymC_from-SUIT_mode-image_xfm.nii');
+fname = '../Diedrichsen_2009/atl-Anatom_space-SUIT_pseg.nii';
+ofname = '../Diedrichsen_2009/atl-Anatom_space-MNISym_pseg.nii';
+dfname = '../Diedrichsen_2009/atl-Anatom_space-MNISym_dseg.nii';
+
 spmdefs_apply_def(Def,mat,fname,1,ofname);
+V=spm_vol(ofname);
+X=spm_read_vols(V);
+% X=(X + flipdim(X,1))/2; 
+for i=1:length(V)
+    spm_write_vol(V(i),X(:,:,:,i));
+end; 
+[x,win] = max(X,[],4);
+xs = sum(X,4);
+win(xs<0.3)=0; 
+Vo = struct('fname',dfname,...
+                'dim',[size(Def{1},1) size(Def{1},2) size(Def{1},3)],...
+                'dt',[2 0],...
+                'pinfo',[1 0 0]',...
+                'mat',V(1).mat,...
+                'n',[1 1],...
+                'descrip','label');
+spm_write_vol(Vo,win);

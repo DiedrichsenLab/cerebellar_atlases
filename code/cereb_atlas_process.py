@@ -94,8 +94,8 @@ def export_as_FSLatlas(name = None, atlas = None):
     Does not work yet
 
     Args:
-        name (str): Directory of 
-        atlas (str): 
+        name (str): Directory of
+        atlas (str):
     """
     root = ET.Element("root")
     doc = ET.SubElement(root, "doc")
@@ -114,7 +114,7 @@ def preprocess_nifti(fname,isLabel=True):
     X = nii.get_fdata()
     img = nb.Nifti1Image(X.round(0), nii.affine)
     if isLabel:
-        img.set_data_dtype('int8')
+        img.set_data_dtype('uint8')
         img.header.set_intent(1002,(),"")
         img.header.set_slope_inter(1.0,0.0)
     else:
