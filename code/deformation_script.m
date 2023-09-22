@@ -15,6 +15,12 @@ fname = '../tpl-SUIT/tpl-SUIT_res-1_T1w.nii';
 ofname = '../tpl-MNI152NLin2009cSymC/SUIT_into-MNISym.nii';
 spmdefs_apply_def(Def,mat,fname,1,ofname);
 
+%% Test_3: Deform MNISym into MNI
+[Def,mat]=spmdefs_get_def('../tpl-MNI152NLin6AsymC/tpl-MNI152NLin6AsymC_from-MNI152NLin2009cSymC_mode-image_xfm.nii');
+fname = '../tpl-MNI152NLin2009cSymC/tpl-MNI152NLin2009cSymC_T1w.nii';
+ofname = '../tpl-MNI152NLin6AsymC/MNISym_into-MNI.nii';
+spmdefs_apply_def(Def,mat,fname,1,ofname);
+
 %% Example 1: Deform a discrete segmentation file using nearest neighbor interpolation
 [Def,mat]=spmdefs_get_def('../tpl-MNI152NLin2009cSymC/tpl-MNI152NLin2009cSymC_from-SUIT_mode-image_xfm.nii');
 fname = '../Diedrichsen_2009/atl-Anatom_space-SUIT_dseg.nii';
