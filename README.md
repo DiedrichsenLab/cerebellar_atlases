@@ -9,9 +9,7 @@ For every maps, we provide some the following files:
 
 The atlases are organized by the first author / year of the main paper
 
-The maps can also be viewed online using our [cerebellar atlas viewer](https://www.diedrichsenlab.org/imaging/AtlasViewer).
-
-### Probabilistic atlas for cerebellar lobules and nuclei: Diedrichsen (2009)
+The maps can also be viewed online using our [cerebellar atlas viewer](https://www.diedrichsenlab.org/imaging/AtlasViewer).### Probabilistic atlas for cerebellar lobules and nuclei: Diedrichsen (2009)
 The anatomical definitions are based on the fMRI atlas of an individual cerebellum by Schmahmann et al. (2000). We manually identified the main lobules on MRI scans of 20 healthy young participants (ROIs 1-28). Using a different set of 23 participants, we also identified the deep cerebellar nuclei (ROIs 29-34).
 * atl-Anatom:    Number of most probable compartment, Lobules and Nuclei
 
@@ -105,12 +103,15 @@ References and Links:
 * King, M., Hernandez-Castillo, C.R., Poldrack, R.R., Ivry, R., and Diedrichsen, J. (2019). Functional Boundaries in the Human Cerebellum revealed by a Multi-Domain Task Battery. Nat. Neurosci.
 
 
-### Functional cerebellar atlas from fusion across task-based datasets (unpublished alpha version)
-Alpha version of functional parcellation into 34 symmetric regions. The map is based on the probabilistic integration of 4 datasets (King et al., 2019; Nakai & Nishimoto, 2010; Individual Brain Charting project, Pinho et al., 2021; and an unpublished high-resolution version of the MDTB). The color scheme reflects the functional similarity of different regions. The map has not been published or peer reviewed. It is a preliminary version for illustrative purposes only, and is subject to change. Do not use or cite without permission.
-* atl-NettekovenSym34:    Symmetric 34-region parcellation based on 4 deep task-based datasets
+### Functional cerebellar atlas from fusion across task-based datasets
+Functional parcellation into 4 domains, 32 regions or 68 subregions (symmetric or asymmetric). The three levels make up a nested hierarchical organization. An additional version with 128 regions that subdivides the 32 regions spatially is available. The maps are based on the probabilistic integration of 7 task-based datasets. The color scheme reflects the functional similarity of different regions. The paper is not final.
+* atl-NettekovenSym32:    Symmetric 32-region parcellation
+* atl-NettekovenAsym32:    Asymmetric 32-region parcellation
+* atl-NettekovenSym68:    Symmetric 68-region parcellation (functional subregions)
+* atl-NettekovenAsym68:    Asymmetric 68-region parcellation (functional subregions)
 
 References and Links:
-* Nettekoven, Zhi, Pinho, Shashahani, Diedrichsen (in preparation). Please do not use / cite without permission by authors.
+* Nettekoven, C. et al. A hierarchical atlas of the human cerebellum for functional precision mapping. BioRviv (2023). DOI:10.1101/2023.09.14.557689v1
 
 
 ## Reference and Licence

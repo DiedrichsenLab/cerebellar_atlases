@@ -33,7 +33,7 @@
                "Assignment of cerebellar voxels to the 17 network parcellation"
           ],
           "ReferencesAndLinks": [
-               "Buckner, R. L., Krienen, F. M., Castellanos, A., Diaz, J. C. & Yeo, B. T. (2011). The organization of the human cerebellum estimated by intrinsic functional connectivity. J Neurophysiol 106, 2322\u00e2\u20ac\u201c2345."
+               "Buckner, R. L., Krienen, F. M., Castellanos, A., Diaz, J. C. & Yeo, B. T. (2011). The organization of the human cerebellum estimated by intrinsic functional connectivity. J Neurophysiol 106, 2322\u20132345."
           ]
      },
      "Xue_2021": {
@@ -52,7 +52,7 @@
                "Individual parcellation for subject 2"
           ],
           "ReferencesAndLinks": [
-               "Xue, A., Kong, R., Yang, Q., Eldaief, M. C., Angeli, P. A., Dinicola, L. M., \u00e2\u20ac\u00a6 Yeo, B. T. T. (2021). The detailed organization of the human cerebellum estimated by intrinsic functional connectivity within the individual. https://doi.org/10.1152/jn.00561.2020"
+               "Xue, A., Kong, R., Yang, Q., Eldaief, M. C., Angeli, P. A., Dinicola, L. M., \u2026 Yeo, B. T. T. (2021). The detailed organization of the human cerebellum estimated by intrinsic functional connectivity within the individual. https://doi.org/10.1152/jn.00561.2020"
           ]
      },
      "Ji_2019": {
@@ -68,7 +68,7 @@
                "Subcortical resting state parcellation in 10 networks"
           ],
           "ReferencesAndLinks": [
-               "Ji, J. L., Spronk, M., Kulkarni, K., Repov\u00c5\u00a1, G., Anticevic, A., & Cole, M. W. (2019). Mapping the human brain's cortical-subcortical functional network organization. Neuroimage, 185, 35-57."
+               "Ji, J. L., Spronk, M., Kulkarni, K., Repov\u0161, G., Anticevic, A., & Cole, M. W. (2019). Mapping the human brain's cortical-subcortical functional network organization. Neuroimage, 185, 35-57."
           ]
      },
      "King_2019": {
@@ -239,18 +239,31 @@
      },
      "Nettekoven_2023": {
           "ShortDesc": "Functional cerebellar atlas from fusion across task-based datasets",
-          "LongDesc": "Hierarchical functional parcellation into 32 symmetric regions. The map is based on the probabilistic integration of 7 datasets. The color scheme reflects the functional similarity of different regions.",
+          "LongDesc": "Functional parcellation into 4 domains, 32 regions or 68 subregions (symmetric or asymmetric). The three levels make up a nested hierarchical organization. An additional version with 128 regions that subdivides the 32 regions spatially is available. The maps are based on the probabilistic integration of 7 task-based datasets. The color scheme reflects the functional similarity of different regions. The paper is not final.",
           "Maps": [
-               "atl-NettekovenSym32"
+               "atl-NettekovenSym32",
+               "atl-NettekovenAsym32",
+               "atl-NettekovenSym68",
+               "atl-NettekovenAsym68"
           ],
           "Type": [
+               "dseg",
+               "dseg",
+               "dseg",
+               "dseg",
+               "dseg",
                "dseg"
           ],
           "MapDesc": [
-               "Symmetric 34-region parcellation based on 4 deep task-based datasets"
+               "Symmetric 32-region parcellation",
+               "Asymmetric 32-region parcellation",
+               "Symmetric 68-region parcellation (functional subregions)",
+               "Asymmetric 68-region parcellation (functional subregions)",
+               "Symmetric 128-region parcellation (spatial subregions)",
+               "Asymmetric 128-region parcellation (spatial subregions)"
           ],
           "ReferencesAndLinks": [
-               "Nettekoven, Zhi, Pinho, Shashahani, Diedrichsen (in preparation). Please do not use / cite without permission by authors."
+               "Nettekoven, C. et al. A hierarchical atlas of the human cerebellum for functional precision mapping. BioRviv (2023). DOI:10.1101/2023.09.14.557689v1"
           ]
      }
 }

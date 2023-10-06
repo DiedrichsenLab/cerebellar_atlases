@@ -8,7 +8,7 @@ import SUITPy as suit
 import nilearn.image as nli
 
 def make_atlas_list(directories=['Diedrichsen_2009','Buckner_2011',
-                                 'Xue_2021','Ji_2019','King_2019','Nettekoven_unp']):
+                                 'Xue_2021','Ji_2019','King_2019','Nettekoven_2023']):
     """
         Makes the package_description.json file
         from the individual atlas_description.json files
@@ -64,17 +64,9 @@ def write_readme():
     """ Automatically generates the README.md file from the package_description.json file
     """
     with open('README.md','w') as out:
-        out.write("# Cerebellar Atlases\n")
-        out.write("The cerebellar atlases are a collection of anatomical and functional atlases of the human cerebellum, both of parcellations and continuous maps. ")
-        out.write("The collection is maintained as a [Github repository](https://github.com/diedrichsenlab/cerebellar_atlases).\n\n")
-        out.write("For every maps, we provide some the following files:\n" +
-        "* ..._space-MNI.nii: volume file aligned to FNIRT MNI space\n" +
-        "* ..._space-SUIT.nii: volume file aligned to SUIT space\n" +
-        "* ....tsv: Color and label lookup table for parcellations\n" +
-        "* ....gii: Data projected to surface-based representation of the cerebellum (Diedrichsen & Zotow, 2015).\n\n")
-        out.write("The atlases are organized by the first author / year of the main paper\n\n")
-
-        out.write("The maps can also be viewed online using our [cerebellar atlas viewer](https://www.diedrichsenlab.org/imaging/AtlasViewer).\n\n")
+        with open('code/README_intro.md') as intro:
+            intro_text = intro.read()
+            out.write(intro_text)
         with open('package_description.json') as jsonfile:
             file = json.load(jsonfile)
             for name,info in file.items():
@@ -86,8 +78,9 @@ def write_readme():
                 for ref in info["ReferencesAndLinks"]:
                     out.write("* " + ref + "\n")
                 out.write("\n\n")
-        out.write("## Reference and Licence\n")
-        out.write("The atlas collection was curated by the Diedrichsenlab. If not otherwise noted in the contributing paper, the atlases are distributed under a Creative Commons license CC BY-ND (Attribution - No derivatives).")
+        with open('code/README_end.md') as footer:
+            footer_text = footer.read()
+            out.write(footer_text)
 
 def export_as_FSLatlas(name = None, atlas = None):
     """ generate the xml file for Atlas Widget in FSLeyes
