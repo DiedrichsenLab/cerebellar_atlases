@@ -4,7 +4,8 @@ The cerebellar atlases are a collection of anatomical and functional atlases of 
 For every maps, we provide some the following files:
 * ..._space-MNI.nii: volume file aligned to FNIRT MNI space
 * ..._space-SUIT.nii: volume file aligned to SUIT space
-* ....tsv: Color and label lookup table for parcellations
+* ...tsv: Color and label lookup table for parcellations
+* ...lut: Color and label lookup table for FSLeyes
 * ....gii: Data projected to surface-based representation of the cerebellum (Diedrichsen & Zotow, 2015).
 
 The atlases are organized by the first author / year of the main paper
@@ -103,12 +104,14 @@ References and Links:
 * King, M., Hernandez-Castillo, C.R., Poldrack, R.R., Ivry, R., and Diedrichsen, J. (2019). Functional Boundaries in the Human Cerebellum revealed by a Multi-Domain Task Battery. Nat. Neurosci.
 
 
-### Functional cerebellar atlas from fusion across task-based datasets
-Functional parcellation into 4 domains, 32 regions or 68 subregions (symmetric or asymmetric). The three levels make up a nested hierarchical organization. An additional version with 128 regions that subdivides the 32 regions spatially is available. The maps are based on the probabilistic integration of 7 task-based datasets. The color scheme reflects the functional similarity of different regions. The paper is not final.
+### Hierarchical functional cerebellar atlas from fusion across task-based datasets
+Functional parcellation into 4 domains, 32 regions or 68 subregions (symmetric or asymmetric). The three levels make up a nested hierarchical organization. An additional version with 128 regions that subdivides the 32 regions spatially into 4 regions (s: superior, i: inferior, t: tertiary, v: vermal) is available. The maps are based on the probabilistic integration of 7 task-based datasets. The color scheme reflects the functional similarity of different regions.
 * atl-NettekovenSym32:    Symmetric 32-region parcellation
 * atl-NettekovenAsym32:    Asymmetric 32-region parcellation
 * atl-NettekovenSym68:    Symmetric 68-region parcellation (functional subregions)
 * atl-NettekovenAsym68:    Asymmetric 68-region parcellation (functional subregions)
+* atl-NettekovenSym128:    Symmetric 128-region parcellation (spatial subregions)
+* atl-NettekovenAsym128:    Asymmetric 128-region parcellation (spatial subregions)
 
 References and Links:
 * Nettekoven, C. et al. A hierarchical atlas of the human cerebellum for functional precision mapping. BioRviv (2023). DOI:10.1101/2023.09.14.557689v1

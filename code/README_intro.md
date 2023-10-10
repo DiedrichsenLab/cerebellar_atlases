@@ -4,7 +4,8 @@ The cerebellar atlases are a collection of anatomical and functional atlases of 
 For every maps, we provide some the following files:
 * ..._space-MNI.nii: volume file aligned to FNIRT MNI space
 * ..._space-SUIT.nii: volume file aligned to SUIT space
-* ....tsv: Color and label lookup table for parcellations
+* ...tsv: Color and label lookup table for parcellations
+* ...lut: Color and label lookup table for FSLeyes
 * ....gii: Data projected to surface-based representation of the cerebellum (Diedrichsen & Zotow, 2015).
 
 The atlases are organized by the first author / year of the main paper

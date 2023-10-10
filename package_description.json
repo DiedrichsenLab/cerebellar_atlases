@@ -238,13 +238,15 @@
           ]
      },
      "Nettekoven_2023": {
-          "ShortDesc": "Functional cerebellar atlas from fusion across task-based datasets",
-          "LongDesc": "Functional parcellation into 4 domains, 32 regions or 68 subregions (symmetric or asymmetric). The three levels make up a nested hierarchical organization. An additional version with 128 regions that subdivides the 32 regions spatially is available. The maps are based on the probabilistic integration of 7 task-based datasets. The color scheme reflects the functional similarity of different regions. The paper is not final.",
+          "ShortDesc": "Hierarchical functional cerebellar atlas from fusion across task-based datasets",
+          "LongDesc": "Functional parcellation into 4 domains, 32 regions or 68 subregions (symmetric or asymmetric). The three levels make up a nested hierarchical organization. An additional version with 128 regions that subdivides the 32 regions spatially into 4 regions (s: superior, i: inferior, t: tertiary, v: vermal) is available. The maps are based on the probabilistic integration of 7 task-based datasets. The color scheme reflects the functional similarity of different regions.",
           "Maps": [
                "atl-NettekovenSym32",
                "atl-NettekovenAsym32",
                "atl-NettekovenSym68",
-               "atl-NettekovenAsym68"
+               "atl-NettekovenAsym68",
+               "atl-NettekovenSym128",
+               "atl-NettekovenAsym128"
           ],
           "Type": [
                "dseg",
