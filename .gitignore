@@ -93,3 +93,4 @@ target/
 *.m~
 *.pyc
 code/deformation_script.asv
+sandbox.sh
