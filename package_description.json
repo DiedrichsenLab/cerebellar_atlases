@@ -18,7 +18,7 @@
           ]
      },
      "Buckner_2011": {
-          "ShortDesc": "Resting state network partcellation: Buckner et al. (2011)",
+          "ShortDesc": "Resting state network parcellation: Buckner et al. (2011)",
           "LongDesc": "Buckner et al. (2011) presented the first comprehensive functional atlas of the human cerebellum, based on the correlation of each cerebellar voxel and with the 7 or 17 cortical resting state networks, described in Yeo et al. Parcellation is based on the data from 1000 subjects. ",
           "Maps": [
                "atl-Buckner7",
