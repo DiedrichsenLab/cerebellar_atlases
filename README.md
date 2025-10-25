@@ -10,7 +10,9 @@ For every maps, we provide some the following files:
 
 The atlases are organized by the first author / year of the main paper
 
-The maps can also be viewed online using our [cerebellar atlas viewer](https://www.diedrichsenlab.org/imaging/AtlasViewer).### Probabilistic atlas for cerebellar lobules and nuclei: Diedrichsen (2009)
+The maps can also be viewed online using our [cerebellar atlas viewer](https://www.diedrichsenlab.org/imaging/AtlasViewer).
+
+### Probabilistic atlas for cerebellar lobules and nuclei: Diedrichsen (2009)
 The anatomical definitions are based on the fMRI atlas of an individual cerebellum by Schmahmann et al. (2000). We manually identified the main lobules on MRI scans of 20 healthy young participants (ROIs 1-28). Using a different set of 23 participants, we also identified the deep cerebellar nuclei (ROIs 29-34).
 * atl-Anatom:    Number of most probable compartment, Lobules and Nuclei
 
