@@ -8,11 +8,11 @@
     "Buckner, R L",
     "Diedrichsen, J"
   ],
-  "BIDSVersion": "1.1.0",
+  "BIDSVersion": "1.2.0",
   "Curators": [
     "Diedrichsen J"
   ],
-  "Identifier": "Nettekoven2023",
+  "Identifier": "Nettekoven2024",
   "License": "see LICENSE file",
   "ShortDesc": "Hierarchical functional cerebellar atlas from fusion across task-based datasets",
   "Maps": [
@@ -40,7 +40,7 @@
     "Asymmetric 128-region parcellation (spatial subregions)"
   ],
   "ReferencesAndLinks": [
-    "Nettekoven, C. et al. A hierarchical atlas of the human cerebellum for functional precision mapping. BioRviv (2023). DOI:10.1101/2023.09.14.557689v1"
+    "Nettekoven, C. et al. A hierarchical atlas of the human cerebellum for functional precision mapping. Nature Communications (2024)."
   ],
   "res": {},
   "LongDesc": "Functional parcellation into 4 domains, 32 regions or 68 subregions (symmetric or asymmetric). The three levels make up a nested hierarchical organization. An additional version with 128 regions that subdivides the 32 regions spatially into 4 regions (s: superior, i: inferior, t: tertiary, v: vermal) is available. The maps are based on the probabilistic integration of 7 task-based datasets. The color scheme reflects the functional similarity of different regions."

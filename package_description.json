@@ -73,7 +73,7 @@
      },
      "King_2019": {
           "ShortDesc": "Multi-domain task battery (MDTB) parcellation and contrasts: King et al. (2019)",
-          "LongDesc": "King et al. (2019) provided an extensive characterization of the functional organization of the cerebellum of 24 healthy, young participants. The contast are for for 47 task conditions, accounted for the activity caused by left hand, right hand, and eye movements. All contrast maps are relative to the mean activitiy across all tasks. The parcellation into 10 regions is defined from the task-evoked activity across all tasks.",
+          "LongDesc": "King et al. (2019) provided an extensive characterization of the functional organization of the cerebellum of 24 healthy, young participants. The contrast are for for 47 task conditions, accounted for the activity caused by left hand, right hand, and eye movements. All contrast maps are relative to the mean activity across all tasks. The parcellation into 10 regions is defined from the task-evoked activity across all tasks.",
           "Maps": [
                "atl-MDTB10",
                "con-MDTB01LeftHandMovement",
@@ -210,9 +210,9 @@
                "Stroop task: Congruent trials",
                "Generate a verb for a displayed noun (dog->bark)",
                "Read the displayed noun: control for verb generation",
-               "Find a target ('T') amoung distractors ('L'): 4 items",
-               "Find a target ('T') amoung distractors ('L'): 8 items",
-               "Find a target ('T') amoung distractors ('L'): 12 items",
+               "Find a target ('T') among distractors ('L'): 4 items",
+               "Find a target ('T') among distractors ('L'): 8 items",
+               "Find a target ('T') among distractors ('L'): 12 items",
                "Passive viewing of fixation cross ",
                "Concrete Permuted Rules Operations: Apply set of rules to 2 stimuli",
                "Predicting the end of a sequentially presented sentence: fulfilled prediction",
@@ -237,7 +237,7 @@
                "King, M., Hernandez-Castillo, C.R., Poldrack, R.R., Ivry, R., and Diedrichsen, J. (2019). Functional Boundaries in the Human Cerebellum revealed by a Multi-Domain Task Battery. Nat. Neurosci."
           ]
      },
-     "Nettekoven_2023": {
+     "Nettekoven_2024": {
           "ShortDesc": "Hierarchical functional cerebellar atlas from fusion across task-based datasets",
           "LongDesc": "Functional parcellation into 4 domains, 32 regions or 68 subregions (symmetric or asymmetric). The three levels make up a nested hierarchical organization. An additional version with 128 regions that subdivides the 32 regions spatially into 4 regions (s: superior, i: inferior, t: tertiary, v: vermal) is available. The maps are based on the probabilistic integration of 7 task-based datasets. The color scheme reflects the functional similarity of different regions.",
           "Maps": [
@@ -265,7 +265,7 @@
                "Asymmetric 128-region parcellation (spatial subregions)"
           ],
           "ReferencesAndLinks": [
-               "Nettekoven, C. et al. A hierarchical atlas of the human cerebellum for functional precision mapping. BioRviv (2023). DOI:10.1101/2023.09.14.557689v1"
+               "Nettekoven, C. et al. A hierarchical atlas of the human cerebellum for functional precision mapping. Nature Communications (2024)."
           ]
      }
 }

@@ -8,7 +8,7 @@ import SUITPy as suit
 import nilearn.image as nli
 
 def make_atlas_list(directories=['Diedrichsen_2009','Buckner_2011',
-                                 'Xue_2021','Ji_2019','King_2019','Nettekoven_2023']):
+                                 'Xue_2021','Ji_2019','King_2019','Nettekoven_2024']):
     """
         Makes the package_description.json file
         from the individual atlas_description.json files

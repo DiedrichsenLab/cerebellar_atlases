@@ -1,10 +1,26 @@
 # Cerebellar Atlases
 The cerebellar atlases are a collection of anatomical and functional atlases of the human cerebellum, both of parcellations and continuous maps. The collection is maintained as a [Github repository](https://github.com/diedrichsenlab/cerebellar_atlases).
 
+## Template spaces
+We are providing the atlas and data maps in three template spaces. All three templates are provided in the `tpl-` directory in a cerebellar-only version.
+* MNI152NLin6AsymC: The non-linear asymmetric MNI template used for example in FSL (short MNI)
+* MNI152NLin2009cSymC: The 2000c symmetric MNI template (short MNISym)
+* SUIT: The original cerebellar-only template (Diedrichsen, 2005)
+
+For every template space, we provide the following files:
+* .._T1w: T1-weighted template image
+* .._desc-pcereb.nii: Probabilistic mask
+* .._desc-cereb_mask.nii: hard mask
+* .._xfm.nii: Transform files between different atlas spaces
+* ..label-GMc_probseg.nii: Gray matter probability
+* ..label-WMc_probseg.nii: White matter probability
+
+## Atlases
 For every maps, we provide some the following files:
-* ..._space-MNI.nii: volume file aligned to FNIRT MNI space
+* ..._space-MNI.nii: volume file aligned to MNI152NLin6AsymC
+* ..._space-MNISym.nii: volume file aligned to MNI152NLin2009cSymC
 * ..._space-SUIT.nii: volume file aligned to SUIT space
-* ...tsv: Color and label lookup table for parcellations
+* ...tsv: Color and label lookup table for parcellation
 * ...lut: Color and label lookup table for FSLeyes
 * ....gii: Data projected to surface-based representation of the cerebellum (Diedrichsen & Zotow, 2015).
 
@@ -49,7 +65,7 @@ References and Links:
 
 
 ### Multi-domain task battery (MDTB) parcellation and contrasts: King et al. (2019)
-King et al. (2019) provided an extensive characterization of the functional organization of the cerebellum of 24 healthy, young participants. The contast are for for 47 task conditions, accounted for the activity caused by left hand, right hand, and eye movements. All contrast maps are relative to the mean activitiy across all tasks. The parcellation into 10 regions is defined from the task-evoked activity across all tasks.
+King et al. (2019) provided an extensive characterization of the functional organization of the cerebellum of 24 healthy, young participants. The contrast are for for 47 task conditions, accounted for the activity caused by left hand, right hand, and eye movements. All contrast maps are relative to the mean activity across all tasks. The parcellation into 10 regions is defined from the task-evoked activity across all tasks.
 * atl-MDTB10:    MDTB parcellation into 10 regions
 * con-MDTB01LeftHandMovement:    Activity across tasks accounted for by left hand movements
 * con-MDTB02RightHandMovement:    Activity across tasks accounted for by right hand movements
@@ -79,9 +95,9 @@ King et al. (2019) provided an extensive characterization of the functional orga
 * con-MDTB26StroopCongruent:    Stroop task: Congruent trials
 * con-MDTB27VerbGeneration:    Generate a verb for a displayed noun (dog->bark)
 * con-MDTB28WordReading:    Read the displayed noun: control for verb generation
-* con-MDTB29VisualSearchSmall:    Find a target ('T') amoung distractors ('L'): 4 items
-* con-MDTB30VisualSearchMedium:    Find a target ('T') amoung distractors ('L'): 8 items
-* con-MDTB31VisualSearchLarge:    Find a target ('T') amoung distractors ('L'): 12 items
+* con-MDTB29VisualSearchSmall:    Find a target ('T') among distractors ('L'): 4 items
+* con-MDTB30VisualSearchMedium:    Find a target ('T') among distractors ('L'): 8 items
+* con-MDTB31VisualSearchLarge:    Find a target ('T') among distractors ('L'): 12 items
 * con-MDTB32Rest:    Passive viewing of fixation cross 
 * con-MDTB33CPRO:    Concrete Permuted Rules Operations: Apply set of rules to 2 stimuli
 * con-MDTB34PredictionTrue:    Predicting the end of a sequentially presented sentence: fulfilled prediction
@@ -116,7 +132,7 @@ Functional parcellation into 4 domains, 32 regions or 68 subregions (symmetric o
 * atl-NettekovenAsym128:    Asymmetric 128-region parcellation (spatial subregions)
 
 References and Links:
-* Nettekoven, C. et al. A hierarchical atlas of the human cerebellum for functional precision mapping. BioRviv (2023). DOI:10.1101/2023.09.14.557689v1
+* Nettekoven, C. et al. A hierarchical atlas of the human cerebellum for functional precision mapping. Nature Communications (2024).
 
 
 ## Reference and Licence

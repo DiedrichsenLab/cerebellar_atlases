@@ -103,9 +103,9 @@
         "Stroop task: Congruent trials",
         "Generate a verb for a displayed noun (dog->bark)",
         "Read the displayed noun: control for verb generation",
-        "Find a target ('T') amoung distractors ('L'): 4 items",
-        "Find a target ('T') amoung distractors ('L'): 8 items",
-        "Find a target ('T') amoung distractors ('L'): 12 items",
+        "Find a target ('T') among distractors ('L'): 4 items",
+        "Find a target ('T') among distractors ('L'): 8 items",
+        "Find a target ('T') among distractors ('L'): 12 items",
         "Passive viewing of fixation cross ",
         "Concrete Permuted Rules Operations: Apply set of rules to 2 stimuli",
         "Predicting the end of a sequentially presented sentence: fulfilled prediction",
@@ -130,5 +130,5 @@
         "King, M., Hernandez-Castillo, C.R., Poldrack, R.R., Ivry, R., and Diedrichsen, J. (2019). Functional Boundaries in the Human Cerebellum revealed by a Multi-Domain Task Battery. Nat. Neurosci."
     ],
     "res": {},
-    "LongDesc": "King et al. (2019) provided an extensive characterization of the functional organization of the cerebellum of 24 healthy, young participants. The contast are for for 47 task conditions, accounted for the activity caused by left hand, right hand, and eye movements. All contrast maps are relative to the mean activitiy across all tasks. The parcellation into 10 regions is defined from the task-evoked activity across all tasks."
+    "LongDesc": "King et al. (2019) provided an extensive characterization of the functional organization of the cerebellum of 24 healthy, young participants. The contrast are for for 47 task conditions, accounted for the activity caused by left hand, right hand, and eye movements. All contrast maps are relative to the mean activity across all tasks. The parcellation into 10 regions is defined from the task-evoked activity across all tasks."
 }
