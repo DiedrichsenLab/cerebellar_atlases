@@ -22,6 +22,7 @@
     "dseg",
     "dseg"
   ],
+  "Spaces":["SUIT","MNI"],
   "MapDesc": [
     "Individual parcellation for subject 1",
     "Individual parcellation for subject 2"],

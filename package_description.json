@@ -8,6 +8,11 @@
           "Type": [
                "dseg"
           ],
+          "Spaces": [
+               "MNI",
+               "SUIT",
+               "MNISym"
+          ],
           "MapDesc": [
                "Number of most probable compartment, Lobules and Nuclei"
           ],
@@ -28,6 +33,10 @@
                "dseg",
                "dseg"
           ],
+          "Spaces": [
+               "MNI",
+               "SUIT"
+          ],
           "MapDesc": [
                "Assignment of cerebellar voxels to the 7 network parcellation",
                "Assignment of cerebellar voxels to the 17 network parcellation"
@@ -47,6 +56,10 @@
                "dseg",
                "dseg"
           ],
+          "Spaces": [
+               "SUIT",
+               "MNI"
+          ],
           "MapDesc": [
                "Individual parcellation for subject 1",
                "Individual parcellation for subject 2"
@@ -63,6 +76,10 @@
           ],
           "Type": [
                "dseg"
+          ],
+          "Spaces": [
+               "MNI",
+               "SUIT"
           ],
           "MapDesc": [
                "Subcortical resting state parcellation in 10 networks"
@@ -180,6 +197,9 @@
                "func",
                "func"
           ],
+          "Spaces": [
+               "SUIT"
+          ],
           "MapDesc": [
                "MDTB parcellation into 10 regions",
                "Activity across tasks accounted for by left hand movements",
@@ -255,6 +275,11 @@
                "dseg",
                "dseg",
                "dseg"
+          ],
+          "Spaces": [
+               "MNI",
+               "SUIT",
+               "MNISym"
           ],
           "MapDesc": [
                "Symmetric 32-region parcellation",

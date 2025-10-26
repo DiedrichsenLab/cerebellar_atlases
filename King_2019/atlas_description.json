@@ -73,6 +73,7 @@
         "func", "func", "func", "func", "func", "func", "func", "func", "func", "func",
         "func", "func", "func", "func", "func", "func", "func", "func", "func", "func"
     ],
+    "Spaces":["SUIT"],
     "MapDesc": [
         "MDTB parcellation into 10 regions",
         "Activity across tasks accounted for by left hand movements",

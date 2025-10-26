@@ -22,6 +22,7 @@ def make_atlas_list(directories=['Diedrichsen_2009','Buckner_2011',
             atlas_dict["LongDesc"] = file["LongDesc"]
             atlas_dict["Maps"] = file["Maps"]
             atlas_dict["Type"] = file["Type"]
+            atlas_dict["Spaces"] = file["Spaces"]
             atlas_dict["MapDesc"] = file["MapDesc"]
             atlas_dict["ReferencesAndLinks"] = file["ReferencesAndLinks"]
         jsondict[name] = atlas_dict

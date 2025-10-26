@@ -16,6 +16,8 @@
   	"dseg",
   	"dseg"
   ],
+  "Spaces":["MNI","SUIT"
+  ],
   "MapDesc": [
     "Assignment of cerebellar voxels to the 7 network parcellation",
     "Assignment of cerebellar voxels to the 17 network parcellation"

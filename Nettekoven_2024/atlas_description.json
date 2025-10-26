@@ -31,6 +31,7 @@
     "dseg",
     "dseg"
   ],
+  "Spaces":["MNI","SUIT","MNISym"],
   "MapDesc": [
     "Symmetric 32-region parcellation",
     "Asymmetric 32-region parcellation",
