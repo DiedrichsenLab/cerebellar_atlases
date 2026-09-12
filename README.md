@@ -39,7 +39,7 @@ References and Links:
 
 
 ### Resting state network parcellation: Buckner et al. (2011)
-Buckner et al. (2011) presented the first comprehensive functional atlas of the human cerebellum, based on the correlation of each cerebellar voxel and with the 7 or 17 cortical resting state networks, described in Yeo et al. Parcellation is based on the data from 1000 subjects. 
+Buckner et al. (2011) presented the first comprehensive functional atlas of the human cerebellum, based on the correlation of each cerebellar voxel and with the 7 or 17 cortical resting state networks, described in Yeo et al. Parcellation is based on the data from 1000 subjects.
 * atl-Buckner7:    Assignment of cerebellar voxels to the 7 network parcellation
 * atl-Buckner17:    Assignment of cerebellar voxels to the 17 network parcellation
 
@@ -82,14 +82,14 @@ King et al. (2019) provided an extensive characterization of the functional orga
 * con-MDTB13ObjectViewing:    Passive viewing of objects or checkerboard patterns
 * con-MDTB14SadFaces:    IAPS affective pictures: Sad facial expressions
 * con-MDTB15HappyFaces:    IAPS affective pictures: Happy facial expressions
-* con-MDTB16IntervalTiming:    Auditory temporal judgement task between short (100ms) and long (175ms) 
+* con-MDTB16IntervalTiming:    Auditory temporal judgement task between short (100ms) and long (175ms)
 * con-MDTB17MotorImagery:    Imagine playing a game of tennis
 * con-MDTB18FingerSimple:    Series of six simple key presses of same finger
 * con-MDTB19FingerSequence:    Bimanual sequence of six key press
-* con-MDTB20Verbal2Back-:    Working memory 2-back task with words: no target 
-* con-MDTB21Verbal2Back+:    Working memory 2-back task with words: target 
-* con-MDTB22Object2Back-:    Working memory 2-back task with pictures: no target 
-* con-MDTB23Object2Back+:    Working memory 2-back task with pictures: target 
+* con-MDTB20Verbal2Back-:    Working memory 2-back task with words: no target
+* con-MDTB21Verbal2Back+:    Working memory 2-back task with words: target
+* con-MDTB22Object2Back-:    Working memory 2-back task with pictures: no target
+* con-MDTB23Object2Back+:    Working memory 2-back task with pictures: target
 * con-MDTB24SpatialImagery:    Imagine to walk from kitchen to bathroom in your childhood home
 * con-MDTB25StroopIncongruent:    Stroop task: Incongruent trials
 * con-MDTB26StroopCongruent:    Stroop task: Congruent trials
@@ -98,7 +98,7 @@ King et al. (2019) provided an extensive characterization of the functional orga
 * con-MDTB29VisualSearchSmall:    Find a target ('T') among distractors ('L'): 4 items
 * con-MDTB30VisualSearchMedium:    Find a target ('T') among distractors ('L'): 8 items
 * con-MDTB31VisualSearchLarge:    Find a target ('T') among distractors ('L'): 12 items
-* con-MDTB32Rest:    Passive viewing of fixation cross 
+* con-MDTB32Rest:    Passive viewing of fixation cross
 * con-MDTB33CPRO:    Concrete Permuted Rules Operations: Apply set of rules to 2 stimuli
 * con-MDTB34PredictionTrue:    Predicting the end of a sequentially presented sentence: fulfilled prediction
 * con-MDTB35PredictionViolated:    Predicting the end of a sequentially presented sentence: violated prediction
@@ -136,4 +136,4 @@ References and Links:
 
 
 ## Reference and Licence
-The atlas collection was curated by the Diedrichsenlab. If not otherwise noted in the contributing paper, the atlases are distributed under a Creative Commons license CC BY-ND (Attribution - No derivatives).
+The atlas collection was curated by the Diedrichsenlab. If not otherwise noted in the contributing paper, the atlases are distributed under a Creative Commons CC BY (Attribution) license .

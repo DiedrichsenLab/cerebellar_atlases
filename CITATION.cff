@@ -7,7 +7,10 @@ authors:
 - family-names: "Zhi"
   given-names: "Da"
   orcid: "https://orcid.org/0000-0001-6023-6523"
+- family-names: "Nettekoven"
+  given-names: "Caroline"
+  orcid: "https://orcid.org/0000-0001-5427-2907"
 title: "A collection of Atlasses for the human cerebellum"
-version: 1.0
-date-released: 2022-11-07
+version: 1.2
+date-released: 2026-09-12
 url: "https://github.com/DiedrichsenLab/cerebellar_atlases"
